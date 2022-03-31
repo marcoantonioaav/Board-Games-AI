@@ -1,4 +1,10 @@
 
+from math import ceil, floor, log
+import random
+from numpy import Inf
+import tictactoe
+from agents import Agent
+
 class SHOT(Agent):
     __init__(self):
         self.TTable = {}
