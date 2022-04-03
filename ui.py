@@ -1,5 +1,5 @@
 from time import sleep
-from tictactoe import is_terminal_state, state_name
+import tictactoe
 import os
 
 def clear_terminal():
@@ -21,8 +21,8 @@ def print_board(board):
         print_board_line(line)
 
 def print_result(board):
-    if is_terminal_state(board):
-        print(state_name(board))
+    if tictactoe.Game.is_terminal_state(board):
+        print(tictactoe.Game.state_name(board))
 
 def print_frame(board):
     clear_terminal()
