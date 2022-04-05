@@ -32,5 +32,5 @@ def simulate_games(game, agent_1:agents.Agent, agent_2:agents.Agent, simulations
 if __name__ == "__main__":
     #run_game_on_screen(agents.MinimaxAgent(1), agents.SequentialHalvingAgent(2))
     #run_game_on_screen(agents.RandomAgent(1), agents.MinimaxAgent(2))
-    print(simulate_games(Game(), MCTS.Minmax_UCT(1), MCTS.Reclyclemax_UCT(-1), 100))
+    print(simulate_games(Game(),  MCTS.UCT(1), MCTS.Reclycle_UCT(-1), 100))
     #print(simulate_games(agents.RandomAgent(1), agents.RandomAgent(2), 100))

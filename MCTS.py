@@ -48,8 +48,7 @@ class UCT(Agent):
         else:
             next_node = self.UCB1(node)
             next_node = self.search(game, self.UCB1(node))
-            if next_node == None:
-                print("ooops")
+            
             return next_node
     
     def expand(self, 
@@ -103,8 +102,9 @@ class UCT(Agent):
         for ch in node.children:
             exploitation = ch.q_value/ch.n_value
             exploration  = math.sqrt(parent_log/ch.n_value)
-            
-            sum_ee = (exploration) + exploitation
+            if(node.player != self.player_id):
+                exploitation *=- 1
+            sum_ee = (0.5 * exploration) + exploitation
             
             if sum_ee > max_value:
                 max_value  = sum_ee
@@ -185,7 +185,7 @@ class Node:
  Recycle-UCT:  It reuses subtree from previous play and discard unused parts 
 
  * Im thinking in two options:
-    1- search and grow the already used tree
+    1- search and grow the already used tree (as here)
     2- create a new tree and use the old one as a bias to decision making in some sense
 '''
 class Reclycle_UCT(UCT):
@@ -201,8 +201,9 @@ class Reclycle_UCT(UCT):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 1000,
+                      max_episodes = 3000,
                       max_depth    =    0):
+        r_nodes = 0
 
         if not self.root == None:
             self.root = self.recycle(self.root, context) #breath-first search to find the next root
@@ -211,6 +212,7 @@ class Reclycle_UCT(UCT):
                 self.discard_garbage(self.root) #clear memory (can be done by a thread)
                 self.root.parent = None
                 self.SUM += self.root.n_value
+                r_nodes = self.root.n_value
             # missed
             else:
                 legal_moves = game.moves(context, self.player_id)
@@ -232,20 +234,28 @@ class Reclycle_UCT(UCT):
             
             episodes+=1
         self.N+=1
-        print("r_uct: " + str(float(self.SUM/self.N)))
+
+        print("ply: " + str(self.N))
+        print("average reused nodes: " + str(round(float(self.SUM/self.N),3)))
+        print("current reused nodes: " + str(r_nodes)+ " ("+ str(int((r_nodes/max_episodes)*100)) + "%)")
+
         return self.robust_child(self.root)
     
+    # should implement breath-first search
     def recycle(self, node, target):
         if node.context == target:
             return node
 
         target_node = None
+        highest_n = 0
+        the_chosen_one = None
         for ch in node.children:
             target_node = self.recycle(ch, target)
             if target_node != None:
-                break
+                if target_node.n_value > highest_n:
+                    the_chosen_one = target_node
         
-        return target_node
+        return the_chosen_one
 
     def discard_garbage(self, new_root):
         # 1st go to old root
@@ -263,85 +273,4 @@ class Reclycle_UCT(UCT):
             del node
 
 
-
-'''
- Testing a Minimax-UCT merge
-
- In order to bring Minmax theorem to MCTS, trying to change a little bit the UCB method
- to introduce the search for the minimal expected value when is opponent's turn.
-'''
-
-class Minmax_UCT(UCT):
-    def UCB1(self, node):
-        best_child   = node
-        max_value    = -math.inf
-        lucky_number = 0
-        parent_log   = 2.0 * math.log(max(1, node.n_value))
-        
-        for ch in node.children:
-            exploitation = ch.q_value/ch.n_value
-            if(node.player != self.player_id):
-                exploitation *=- 1
-
-            
-            exploration  = math.sqrt(parent_log/ch.n_value)
-            
-            
-            sum_ee = exploration + exploitation
-            
-            
-            if sum_ee > max_value:
-                max_value  = sum_ee
-                best_child = ch
-            
-            elif sum_ee == max_value:
-                if random.randint(0, lucky_number + 1) == 0:
-                    best_child = ch
-                lucky_number += 1
-
-        return best_child
-
-
-'''
- Testing RecycleMax-UCT:  
-
-    If minimax theorem its more realistic in terms of how a zero-sum game works than the monte-carlo tree
-        that tries to balance beetwen exploration and exploitation BUT always maximizes rewards...
-    IF the ideia to bring minimax to UCB policy works well, maybe the tree grows in the opponent's level more
-    realistically, so, when is the opponents turn, the subtree there should more more explored in Recyclemax-UCT thant UCT
-    because it assumes that opponents will play the best move as possible.. SO the reuse of previous trees should increase.
-
-    * in tic tac toe increased drastically, the reuse mean of Recycle UCT is about 2% the size of the tree and at recyclemax
-    is about 10%+
-
-    * It makes sense to me, but im not sure that inject minimax theorem in UCB policy will make the agent play better.
-'''
-
-class Reclyclemax_UCT(Reclycle_UCT):
-    SUM = 0
-    N = 0
-    def UCB1(self, node):
-        best_child   = node
-        max_value    = -math.inf
-        lucky_number = 0
-        parent_log   = 2.0 * math.log(max(1, node.n_value))
-        
-        for ch in node.children:
-            exploitation = ch.q_value/ch.n_value
-            exploration  = math.sqrt(parent_log/ch.n_value)
-            if(node.player != self.player_id):
-                exploitation *=- 1
-
-            sum_ee = exploration + exploitation
-            
-            if sum_ee > max_value:
-                max_value  = sum_ee
-                best_child = ch
-            
-            elif sum_ee == max_value:
-                if random.randint(0, lucky_number + 1) == 0:
-                    best_child = ch
-                lucky_number += 1
-
-        return best_child
 
