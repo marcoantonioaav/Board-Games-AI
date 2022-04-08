@@ -33,7 +33,7 @@ class SequentialHalvingAgent(Agent):
         return moves_dict[0]['Move']
 
     def select_action(self, game, context, max_seconds=0, max_iterations=0, max_depth=0):
-        return self.sequential_halving(context, 5000)
+        return self.sequential_halving(context, 512)
 
     def get_name(self):
         return "Sequential Halving Agent"

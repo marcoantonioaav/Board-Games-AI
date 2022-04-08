@@ -1,10 +1,9 @@
 from time import sleep
-import os
 
 from agents.agent import Agent
+from ui.util import clear_terminal
 
-def clear_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def get_piece_simbol(piece):
     if piece == Agent.PLAYER_1: 
