@@ -38,3 +38,6 @@ class MinimaxAgent(Agent):
     def select_action(self, game, context, max_second=0, max_iterations=0, max_depth=4):
         value, move = self.minimax(context, max_depth, True)
         return move
+
+    def get_name(self):
+        return "Minimax Agent"

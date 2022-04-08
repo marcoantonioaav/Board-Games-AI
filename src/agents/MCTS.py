@@ -14,6 +14,8 @@ class UCT(Agent):
     def __init__(self, player_id):
         self.player_id = player_id
 
+    def get_name(self):
+        return "UCT Agent"
 
     def select_action(self, 
                       game, 
@@ -188,7 +190,7 @@ class Node:
     1- search and grow the already used tree (as here)
     2- create a new tree and use the old one as a bias to decision making in some sense
 '''
-class Reclycle_UCT(UCT):
+class Recycle_UCT(UCT):
     SUM = 0
     N = 0
     
@@ -196,6 +198,8 @@ class Reclycle_UCT(UCT):
         self.player_id = player_id
         self.root = None
 
+    def get_name(self):
+        return "Recycle UCT Agent"
 
     def select_action(self, 
                       game, 

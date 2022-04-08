@@ -11,6 +11,9 @@ class Agent:
     def set_game(self, game):
         self.game = game
     
+    def get_name(self):
+        pass
+
     def select_action(self, game, context, max_seconds, max_iterations, max_depth):
         pass
 
@@ -31,4 +34,3 @@ class Agent:
             return self.PLAYER_2
         else:
             return self.PLAYER_1
-

@@ -1,5 +1,3 @@
-from random import shuffle
-
 from agents.agent import Agent
 
 class Game:
