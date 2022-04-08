@@ -1,31 +1,36 @@
 from time import sleep
-import tictactoe
 import os
+
+from agents.agent import Agent
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def get_piece_simbol(piece):
-    if piece == 1: 
+    if piece == Agent.PLAYER_1: 
         return 'X'
-    elif piece == 2:
+    elif piece == Agent.PLAYER_2:
         return 'O'
     else:
         return '-'
 
+def board_line_to_string(line):
+    line_string = ""
+    for piece in line:
+        line_string += get_piece_simbol(piece)+" "
+    return line_string
+
 def print_board_line(line):
-    print(f"{get_piece_simbol(line[0])} {get_piece_simbol(line[1])} {get_piece_simbol(line[2])}")
+    print(board_line_to_string(line))
 
 def print_board(board):
     for line in board:
         print_board_line(line)
 
-def print_result(board):
-    if tictactoe.Game.is_terminal_state(board):
-        print(tictactoe.Game.state_name(board))
+def print_result(board, game):
+    print(game.state_name(board))
 
 def print_frame(board):
     clear_terminal()
     print_board(board)
-    print_result(board)
     sleep(0.5)

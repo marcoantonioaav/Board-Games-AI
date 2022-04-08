@@ -271,6 +271,3 @@ class Reclycle_UCT(UCT):
             t_gn = [ch for ch in node.children if ch != new_root]
             garbage_nodes = garbage_nodes + t_gn
             del node
-
-
-
