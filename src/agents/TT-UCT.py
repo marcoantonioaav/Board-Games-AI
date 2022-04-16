@@ -96,7 +96,7 @@ class TT_UCT(UCT):
         # 2: for every reachable node starting at new_parent (that not appears at lst_old_parents)
         #       increment its Nvalue and Qvalue with target_node values
         lst_path = [new_parent]
-        while len(new_parent) > 0:
+        while len(lst_path) > 0:
             current = lst_path.pop(0)
             if current.parent == [None]:
                 continue
