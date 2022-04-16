@@ -1,0 +1,44 @@
+1607MiB     1608MiB
+1172MiB     1173MiB
+175MiB      175MiB
+12MiB       12MiB
+
+1380MiB     1381MiB
+798MiB      798MiB
+42MiB       42MiB
+
+1591MiB     1592MiB
+1177MiB     1177MiB
+253MiB      254MiB
+
+1379MiB     1380MiB
+703MiB      703MiB
+52MiB       52MiB
+3MiB        3MiB
+
+1586MiB     1587MiB
+1172MiB     1173MiB
+244MiB      244MiB
+12MiB       12MiB
+0MiB        0MiB
+
+1375MiB     1376MiB
+809MiB      810MiB
+36MiB       36MiB
+
+1589MiB     1590MiB
+1173MiB     1174MiB
+180MiB      180MiB
+12MiB       12MiB
+
+1379MiB     1380MiB
+569MiB      569MiB
+41MiB       41MiB
+
+1591MiB     1592MiB
+1171MiB     1172MiB
+209MiB      209MiB
+
+1388MiB     1390MiB
+619MiB      619MiB
+
