@@ -2,7 +2,9 @@ import random
 import math
 import time
 from copy import deepcopy
-from agents import Agent
+
+from agents.agent import Agent
+
 '''
  Simple MCTS-UCT implementation.
 
@@ -11,9 +13,6 @@ from agents import Agent
 
 class UCT(Agent):
     
-    def __init__(self, player_id):
-        self.player_id = player_id
-
     def get_name(self):
         return "UCT Agent"
 
@@ -21,11 +20,11 @@ class UCT(Agent):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 1000,
+                      max_episodes = 2000,
                       max_depth    =    0):
 
-        legal_moves = game.moves(context, self.player_id)
-        root        = Node(None, None, context, legal_moves, 0, self.player_id)
+        legal_moves = game.moves(context, self.player)
+        root        = Node(None, None, context, legal_moves, 0, self.player)
 
         episodes = 0
         stop_time = math.inf if max_seconds <= 0.0 else time.time() + max_seconds
@@ -71,7 +70,7 @@ class UCT(Agent):
                 node):
         
         current_state = node.context
-        ply       = node.ply
+        ply       = 0#node.ply
         ply_limit = 50
         player    = node.player
 
@@ -104,9 +103,9 @@ class UCT(Agent):
         for ch in node.children:
             exploitation = ch.q_value/ch.n_value
             exploration  = math.sqrt(parent_log/ch.n_value)
-            if(node.player != self.player_id):
+            if(node.player != self.player):
                 exploitation *=- 1
-            sum_ee = (0.5 * exploration) + exploitation
+            sum_ee = (exploration) + exploitation
             
             if sum_ee > max_value:
                 max_value  = sum_ee
@@ -121,9 +120,9 @@ class UCT(Agent):
 
     
     def reward_value(self, game, state, player):
-        if game.is_victory(state, player) and player == self.player_id:
+        if game.is_victory(state, player) and player == self.player:
             return 1
-        elif game.is_victory(state, player) and player != self.player_id:
+        elif game.is_victory(state, player) and player != self.player:
             return -1
         else:
             return 0
@@ -147,7 +146,23 @@ class UCT(Agent):
                     max_q_value = ch.q_value
                     max_move    = ch.move
         return max_move
-
+    
+    def max_balanced_child(self, root):
+        max_balanced = -math.inf
+        max_move = None
+        
+        parent_log   = 2.0 * math.log(max(1, 2000))
+        
+        random.shuffle(root.children)
+        for ch in root.children:
+            exploitation = ch.q_value/ch.n_value
+            exploration  = math.sqrt(parent_log/ch.n_value)
+            sum_ee = exploitation - exploration
+            if sum_ee > max_balanced:
+                max_balanced = sum_ee
+                max_move = ch.move
+        return max_move
+    
 
 class Node:
     def __init__(self, parent, move, context, legal_moves, ply, player):
@@ -194,8 +209,7 @@ class Recycle_UCT(UCT):
     SUM = 0
     N = 0
     
-    def __init__(self, player_id):
-        self.player_id = player_id
+    def __init__(self):
         self.root = None
 
     def get_name(self):
@@ -205,7 +219,7 @@ class Recycle_UCT(UCT):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 3000,
+                      max_episodes = 2000,
                       max_depth    =    0):
         r_nodes = 0
 
@@ -219,13 +233,13 @@ class Recycle_UCT(UCT):
                 r_nodes = self.root.n_value
             # missed
             else:
-                legal_moves = game.moves(context, self.player_id)
-                self.root   = Node(None, None, context, legal_moves, 0, self.player_id)
+                legal_moves = game.moves(context, self.player)
+                self.root   = Node(None, None, context, legal_moves, 0, self.player)
 
         else:
 
-            legal_moves = game.moves(context, self.player_id)
-            self.root   = Node(None, None, context, legal_moves, 0, self.player_id)
+            legal_moves = game.moves(context, self.player)
+            self.root   = Node(None, None, context, legal_moves, 0, self.player)
 
         episodes  = 0
         stop_time = math.inf if max_seconds <= 0.0 else time.time() + max_seconds
@@ -239,11 +253,11 @@ class Recycle_UCT(UCT):
             episodes+=1
         self.N+=1
 
-        print("ply: " + str(self.N))
-        print("average reused nodes: " + str(round(float(self.SUM/self.N),3)))
-        print("current reused nodes: " + str(r_nodes)+ " ("+ str(int((r_nodes/max_episodes)*100)) + "%)")
+        #print("ply: " + str(self.N))
+        #print("average reused nodes: " + str(round(float(self.SUM/self.N),3)))
+        #print("current reused nodes: " + str(r_nodes)+ " ("+ str(int((r_nodes/max_episodes)*100)) + "%)")
 
-        return self.robust_child(self.root)
+        return self.max_balanced_child(self.root)
     
     # should implement breath-first search
     def recycle(self, node, target):
@@ -275,3 +289,134 @@ class Recycle_UCT(UCT):
             t_gn = [ch for ch in node.children if ch != new_root]
             garbage_nodes = garbage_nodes + t_gn
             del node
+
+
+'''
+TT-UCT: UCT with transposition table
+
+Uses transposition table to not generate subtrees with the same root,
+
+Instead for each new node searches in transposition table if it existis, if so append a new father reference (parent will be an array).
+
+'''
+    
+class TT_UCT(UCT):  
+    def __init__(self):
+        self.TTable = {}
+
+    def select_action(self, 
+                      game, 
+                      context, 
+                      max_seconds  =   -1,
+                      max_episodes = 2000,
+                      max_depth    =    0):
+
+        legal_moves = game.moves(context, self.player)
+        root        = TTNode(None, None, context, legal_moves, self.player)
+
+        episodes = 0
+        stop_time = math.inf if max_seconds <= 0.0 else time.time() + max_seconds
+        
+        while episodes < max_episodes and time.time() < stop_time:
+            current_node = self.search(game, root)
+            new_node     = self.expand(game, current_node)
+            reward       = self.playout(game, new_node)
+            self.backpropagate(new_node, reward)
+            
+            episodes+=1
+
+        return self.robust_child(root)
+
+    def expand(self, 
+               game, 
+               current_node):
+        
+        if current_node.legal_moves == []:
+            return current_node
+
+        next_move    = current_node.legal_moves.pop()
+        next_context = game.apply(next_move, current_node.context)
+        next_player  = current_node.player * -1
+        str_next_context = str(next_context)
+
+        #HIT Transposition Table:
+        if (next_player, str_next_context) in self.TTable:
+            target_node = self.TTable[(next_player, str_next_context)]
+            target_node.parent.append(current_node)
+            current_node.children.append(target_node)
+
+            return target_node
+
+        new_node = TTNode(current_node, next_move, next_context, game.moves(next_context, next_player), next_player)
+        self.TTable[(next_player, str_next_context)] = new_node
+        return new_node
+    
+    def backpropagate(self, node, reward):
+        lst_nodes = [node]
+        lst_parents = set() # prevents for double backtrack
+        while len(lst_nodes) > 0:
+            current = lst_nodes.pop(0)
+            if current in lst_parents or current.parent == [None]:
+                continue
+            
+            current.q_value += reward
+            current.n_value += 1
+            lst_parents.add(current)
+            lst_nodes = current.parent + lst_nodes
+    
+    def UCB1(self, node):
+        best_child   = node
+        max_value    = -math.inf
+        lucky_number = 0
+        #parent_log   = 2.0 * math.log(max(1, sum([i.n_value for i in node.parent])))
+        parent_log   = 2.0 * math.log(max(1, )))
+        
+        for ch in node.children:
+            exploitation = ch.q_value/ch.n_value
+            exploration  = math.sqrt(parent_log/ch.n_value)
+            if(node.player != self.player):
+                exploitation *=- 1
+            sum_ee = (exploration) + exploitation
+            
+            if sum_ee > max_value:
+                max_value  = sum_ee
+                best_child = ch
+            
+            elif sum_ee == max_value:
+                if random.randint(0, lucky_number + 1) == 0:
+                    best_child = ch
+                lucky_number += 1
+
+        return best_child
+
+class TTNode:
+    def __init__(self, parent, move, context, legal_moves, player):
+        self.n_value  = 0
+        self.q_value  = 0 
+        self.player   = player
+        self.children = []
+        self.legal_moves = legal_moves
+        random.shuffle(self.legal_moves)
+
+        
+        self.parent = [parent]
+        self.move    = move
+        self.context = context
+
+        if parent != None:
+            parent.children.append(self)
+    
+    
+    def deep_copy(self):
+        return deepcopy(self)
+    
+    def __del__(self):
+        self.n_value  = None
+        self.q_value  = None
+        self.player   = None
+        self.children = None
+        self.legal_moves = None
+        self.parent  = None
+        self.move    = None
+        self.context = None
+    

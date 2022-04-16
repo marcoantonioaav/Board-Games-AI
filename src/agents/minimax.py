@@ -3,7 +3,7 @@ from agents.agent import Agent
 
 
 class MinimaxAgent(Agent):
-    def get_heuristc_value(self, context):
+    def evaluate(self, context):
         if self.game.is_victory(context, self.player):
             return 1
         elif self.game.is_victory(context, self.get_opponent()):
@@ -13,7 +13,7 @@ class MinimaxAgent(Agent):
     
     def minimax(self, context, depth, maximizingMoveer):
         if depth == 0 or self.game.is_terminal_state(context):
-            return self.get_heuristc_value(context), None
+            return self.evaluate(context), None
         if maximizingMoveer:
             max_value = -Inf
             max_move = None

@@ -1,8 +1,11 @@
 import timeit
-from agents.minimax import MinimaxAgent
+
 from agents.agent import Agent
+from agents.minimax import MinimaxAgent
 from agents.sequential_halving import SequentialHalvingAgent, ShotAgent
 from agents.random import RandomAgent
+from agents.MCTS import UCT, Recycle_UCT, TT_UCT
+
 from ui.game_screen import print_frame, print_result
 from games.tictactoe import TicTacToe
 from ui.simulation_screen import print_simulation_frame
@@ -61,5 +64,5 @@ if __name__ == "__main__":
     #run_game_on_screen(TicTacToe(), RandomAgent(), ShotAgent())
     #run_game_on_screen(RandomAgent(), MinimaxAgent())
     #print(simulate_games(TicTacToe(),  MCTS.UCT(), MCTS.Recycle_UCT(), 100))
-    print(simulate_games(TicTacToe(), ShotAgent(), RandomAgent(), 100))
+    print(simulate_games(TicTacToe(), TT_UCT(), Recycle_UCT(), 100))
     #print(simulate_games(TicTacToe(), SequentialHalvingAgent(), MinimaxAgent(), 100))
