@@ -4,9 +4,8 @@ import time
 from copy import deepcopy
 
 from agents.agent import Agent
-from agents.agent import UCT
-from agents.agent import Node
-
+from agents.UCT import UCT, Node
+import tracemalloc
 '''
  Recycle-UCT:  It reuses subtree from previous play and discard unused parts 
 
@@ -28,8 +27,11 @@ class Recycle_UCT(UCT):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 2000,
+                      max_episodes = 1000,
                       max_depth    =    0):
+                      # starting the monitoring
+        tracemalloc.start()
+        
         r_nodes = 0
 
         if not self.root == None:
@@ -62,11 +64,21 @@ class Recycle_UCT(UCT):
             episodes+=1
         self.N+=1
 
+
+       # displaying the memory
+        tmp = tracemalloc.get_traced_memory()
+        str1 = str(int(tmp[0]/1000))+"MiB"
+        str2 = str(int(tmp[1]/1000))+"MiB"
+        print(f'{str1:<12}{str2}')
+        # stopping the library
+        tracemalloc.stop()
+
+
         #print("ply: " + str(self.N))
         #print("average reused nodes: " + str(round(float(self.SUM/self.N),3)))
         #print("current reused nodes: " + str(r_nodes)+ " ("+ str(int((r_nodes/max_episodes)*100)) + "%)")
 
-        return self.max_balanced_child(self.root)
+        return self.robust_child(self.root)
     
     # should implement breath-first search
     def recycle(self, node, target):

@@ -1,6 +1,7 @@
+from inspect import trace
 from numpy import Inf
 from agents.agent import Agent
-
+import tracemalloc
 
 class MinimaxAgent(Agent):
     def evaluate(self, context):
@@ -36,7 +37,17 @@ class MinimaxAgent(Agent):
             return min_value, min_move
 
     def select_action(self, game, context, max_second=0, max_iterations=0, max_depth=4):
+        # starting the monitoring
+        tracemalloc.start()
+        
         value, move = self.minimax(context, max_depth, True)
+
+        # displaying the memory
+        tmp = tracemalloc.get_traced_memory()
+        str1 = str(int(tmp[0]/1000))+"MiB"
+        str2 = str(int(tmp[1]/1000))+"MiB"
+        print(f'{str1:<12}{str2}')
+        tracemalloc.stop()
         return move
 
     def get_name(self):

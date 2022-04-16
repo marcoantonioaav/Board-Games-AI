@@ -4,7 +4,11 @@ import time
 from copy import deepcopy
 
 from agents.agent import Agent
-from agents.agent import UCT
+from agents.UCT import UCT
+
+from memory_profiler import profile
+import tracemalloc
+import psutil
 '''
 TT-UCT: UCT with transposition table
 
@@ -32,7 +36,12 @@ In order to do it, we have to change expansion phase, backpropagation and maybe 
 class TT_UCT(UCT):  
     def __init__(self):
         self.TTable = {}
+        self.count_transpositions = 0
 
+    def get_name(self):
+        return "TT-UCT Agent"
+
+    #@profile
     def select_action(self, 
                       game, 
                       context, 
@@ -40,10 +49,16 @@ class TT_UCT(UCT):
                       max_episodes = 2000,
                       max_depth    =    0):
 
+        # starting the monitoring
+        tracemalloc.start()
+        start_time = time.time()
+
         legal_moves = game.moves(context, self.player)
         root        = TTNode(None, None, context, legal_moves, self.player)
 
         episodes = 0
+        self.count_transpositions = 0
+        self.TTable = {}
         stop_time = math.inf if max_seconds <= 0.0 else time.time() + max_seconds
         
         while episodes < max_episodes and time.time() < stop_time:
@@ -53,6 +68,18 @@ class TT_UCT(UCT):
             self.backpropagate(new_node, reward)
             
             episodes+=1
+
+        #print(self.count_transpositions)
+
+        # displaying the memory
+        ag_str = self.get_name()
+        tmp = tracemalloc.get_traced_memory()
+        str1 = str(int(tmp[0]/1000))+"MiB"
+        str2 = str(int(tmp[1]/1000))+"MiB"
+        str3 = str(psutil.virtual_memory()[2]) + "%"
+        str4 = str(round(int(time.time() - start_time), 6)) + "s"
+        print(f'{ag_str:<15}{str1:<12}{str2:<12}{str3:<8}{str4:<8}')
+        tracemalloc.stop()
 
         return self.robust_child(root)
 
@@ -74,7 +101,7 @@ class TT_UCT(UCT):
             self.pre_backpropagate(target_node, current_node)
             target_node.parent.append(current_node)
             current_node.children.append(target_node)
-
+            self.count_transpositions+=1
             return target_node
 
         new_node = TTNode(current_node, next_move, next_context, game.moves(next_context, next_player), next_player)
@@ -91,7 +118,7 @@ class TT_UCT(UCT):
             if current.parent == [None]:
                 continue
             lst_old_parents.add(current)
-            lst_path = lst_path + current.parents
+            lst_path = lst_path + current.parent
         
         # 2: for every reachable node starting at new_parent (that not appears at lst_old_parents)
         #       increment its Nvalue and Qvalue with target_node values
@@ -103,7 +130,8 @@ class TT_UCT(UCT):
             elif not current in lst_old_parents:
                 current.n_value += target_node.n_value
                 current.q_value += target_node.q_value
-            lst_path = lst_path + current.parents
+            lst_path = lst_path + current.parent
+
 
     def backpropagate(self, node, reward):
         lst_nodes = [node]

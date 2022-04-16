@@ -5,6 +5,10 @@ from copy import deepcopy
 
 from agents.agent import Agent
 
+# profiling stuff
+import tracemalloc
+import psutil
+import time
 '''
  Simple MCTS-UCT implementation.
 
@@ -22,6 +26,11 @@ class UCT(Agent):
                       max_seconds  =   -1,
                       max_episodes = 2000,
                       max_depth    =    0):
+        # starting the monitoring
+
+        tracemalloc.start()
+        start_time = time.time()
+
 
         legal_moves = game.moves(context, self.player)
         root        = Node(None, None, context, legal_moves, 0, self.player)
@@ -34,8 +43,19 @@ class UCT(Agent):
             new_node     = self.expand(game, current_node)
             reward       = self.playout(game, new_node)
             self.backpropagate(new_node, reward)
-            
+
             episodes+=1
+        
+        # displaying the memory
+        tmp = tracemalloc.get_traced_memory()
+        ag_str = self.get_name()
+        str1 = str(int(tmp[0]/1000))+"MiB"
+        str2 = str(int(tmp[1]/1000))+"MiB"
+        str3 = str(psutil.virtual_memory()[2]) + "%"
+        str4 = str(round((time.time() - start_time), 6)) + "s"
+
+        print(f'{ag_str:<15}{str1:<12}{str2:<12}{str3:<8}{str4:<8}')
+        tracemalloc.stop()
 
         return self.robust_child(root)
     
