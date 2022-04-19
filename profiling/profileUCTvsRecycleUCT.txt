@@ -1,0 +1,865 @@
+UCT Agent      3084MiB     3085MiB     19.9%   3.808745s
+Recycle-UCT    2679MiB     2680MiB     20.9%   3.3637s 
+UCT Agent      2200MiB     2201MiB     20.1%   2.730611s
+Recycle-UCT    690MiB      690MiB      20.1%   0.560256s
+UCT Agent      179MiB      179MiB      20.1%   0.15464s
+Recycle-UCT    0MiB        0MiB        20.1%   0.05116s
+UCT Agent      12MiB       12MiB       20.1%   0.047439s
+Recycle-UCT    0MiB        0MiB        20.1%   0.030693s
+UCT Agent      0MiB        0MiB        20.1%   0.015651s
+Recycle-UCT    3065MiB     3067MiB     20.5%   3.769768s
+UCT Agent      2680MiB     2681MiB     20.5%   3.172415s
+Recycle-UCT    2182MiB     2182MiB     20.4%   2.448062s
+UCT Agent      659MiB      659MiB      20.6%   0.592371s
+Recycle-UCT    143MiB      143MiB      20.8%   0.181569s
+UCT Agent      52MiB       52MiB       20.9%   0.081794s
+Recycle-UCT    1MiB        1MiB        20.9%   0.04574s
+UCT Agent      3MiB        3MiB        20.9%   0.034763s
+Recycle-UCT    0MiB        0MiB        20.9%   0.016412s
+UCT Agent      3063MiB     3064MiB     20.7%   3.779445s
+Recycle-UCT    2679MiB     2680MiB     20.6%   4.18853s
+UCT Agent      2199MiB     2199MiB     21.0%   2.709887s
+Recycle-UCT    518MiB      518MiB      21.0%   0.50787s
+UCT Agent      183MiB      183MiB      21.1%   0.250952s
+Recycle-UCT    0MiB        0MiB        21.1%   0.071217s
+UCT Agent      12MiB       12MiB       21.1%   0.063537s
+Recycle-UCT    0MiB        0MiB        21.1%   0.041514s
+UCT Agent      0MiB        0MiB        21.1%   0.035445s
+Recycle-UCT    3070MiB     3071MiB     20.4%   4.706822s
+UCT Agent      2678MiB     2679MiB     20.3%   3.686221s
+Recycle-UCT    2189MiB     2189MiB     20.3%   2.290016s
+UCT Agent      592MiB      593MiB      20.3%   0.483641s
+Recycle-UCT    108MiB      108MiB      20.3%   0.13843s
+UCT Agent      49MiB       49MiB       20.3%   0.081557s
+Recycle-UCT    0MiB        0MiB        20.3%   0.035094s
+UCT Agent      3MiB        3MiB        20.3%   0.022626s
+UCT Agent      3065MiB     3066MiB     21.2%   3.883322s
+Recycle-UCT    2678MiB     2679MiB     20.8%   3.259815s
+UCT Agent      2204MiB     2204MiB     20.5%   2.154685s
+Recycle-UCT    535MiB      535MiB      20.5%   0.378039s
+UCT Agent      185MiB      185MiB      20.5%   0.17727s
+Recycle-UCT    2MiB        2MiB        20.5%   0.05273s
+UCT Agent      13MiB       13MiB       20.5%   0.050467s
+Recycle-UCT    0MiB        0MiB        20.5%   0.028754s
+Recycle-UCT    3059MiB     3060MiB     20.8%   4.413995s
+UCT Agent      2678MiB     2679MiB     20.5%   3.942766s
+Recycle-UCT    2184MiB     2184MiB     20.5%   2.446479s
+UCT Agent      560MiB      560MiB      20.5%   0.600443s
+Recycle-UCT    99MiB       99MiB       20.5%   0.129056s
+UCT Agent      52MiB       52MiB       20.5%   0.102757s
+Recycle-UCT    0MiB        0MiB        20.5%   0.053799s
+UCT Agent      3MiB        3MiB        20.5%   0.044417s
+Recycle-UCT    0MiB        0MiB        20.5%   0.035907s
+UCT Agent      3063MiB     3064MiB     20.5%   4.463223s
+Recycle-UCT    2678MiB     2679MiB     20.5%   3.94636s
+UCT Agent      2193MiB     2193MiB     20.5%   2.845253s
+Recycle-UCT    517MiB      517MiB      20.5%   0.538669s
+UCT Agent      184MiB      184MiB      20.5%   0.267059s
+Recycle-UCT    0MiB        0MiB        20.5%   0.078449s
+UCT Agent      12MiB       12MiB       20.5%   0.061831s
+Recycle-UCT    0MiB        0MiB        20.5%   0.038083s
+UCT Agent      0MiB        0MiB        20.5%   0.024844s
+Recycle-UCT    3059MiB     3060MiB     20.4%   4.51519s
+UCT Agent      2678MiB     2679MiB     20.4%   3.961063s
+Recycle-UCT    2174MiB     2174MiB     20.5%   2.813244s
+UCT Agent      559MiB      559MiB      20.5%   0.557108s
+Recycle-UCT    50MiB       50MiB       20.5%   0.105178s
+UCT Agent      52MiB       52MiB       20.5%   0.123711s
+Recycle-UCT    0MiB        0MiB        20.5%   0.053502s
+UCT Agent      3MiB        3MiB        20.5%   0.047106s
+Recycle-UCT    0MiB        0MiB        20.5%   0.023256s
+UCT Agent      3063MiB     3064MiB     20.9%   4.760861s
+Recycle-UCT    2680MiB     2681MiB     20.7%   4.338708s
+UCT Agent      2215MiB     2215MiB     20.6%   3.393268s
+Recycle-UCT    680MiB      680MiB      20.6%   0.697951s
+UCT Agent      180MiB      180MiB      20.6%   0.201843s
+Recycle-UCT    0MiB        0MiB        20.6%   0.066172s
+UCT Agent      12MiB       12MiB       20.6%   0.062013s
+Recycle-UCT    0MiB        0MiB        20.6%   0.04121s
+UCT Agent      0MiB        0MiB        20.6%   0.020224s
+Recycle-UCT    3058MiB     3060MiB     20.6%   4.503585s
+UCT Agent      2680MiB     2681MiB     21.0%   4.425686s
+Recycle-UCT    2199MiB     2199MiB     20.8%   2.864291s
+UCT Agent      656MiB      656MiB      20.8%   0.791441s
+Recycle-UCT    192MiB      192MiB      20.8%   0.265388s
+UCT Agent      53MiB       53MiB       20.7%   0.124673s
+Recycle-UCT    0MiB        0MiB        20.7%   0.062916s
+UCT Agent      3MiB        3MiB        20.7%   0.052861s
+Recycle-UCT    0MiB        0MiB        20.7%   0.039569s
+UCT Agent      3064MiB     3066MiB     21.3%   4.930058s
+Recycle-UCT    2678MiB     2679MiB     21.0%   4.014649s
+UCT Agent      2203MiB     2203MiB     20.7%   3.098032s
+Recycle-UCT    542MiB      542MiB      20.7%   0.620186s
+UCT Agent      194MiB      194MiB      20.7%   0.334886s
+Recycle-UCT    2MiB        2MiB        20.7%   0.060962s
+UCT Agent      13MiB       13MiB       20.7%   0.056847s
+Recycle-UCT    0MiB        0MiB        20.7%   0.026443s
+Recycle-UCT    3070MiB     3071MiB     20.5%   4.646385s
+UCT Agent      2677MiB     2678MiB     20.9%   4.171377s
+Recycle-UCT    2184MiB     2184MiB     20.6%   2.900464s
+UCT Agent      655MiB      655MiB      20.6%   0.792585s
+Recycle-UCT    152MiB      152MiB      20.6%   0.217586s
+UCT Agent      52MiB       52MiB       20.6%   0.111559s
+Recycle-UCT    0MiB        0MiB        20.6%   0.054589s
+UCT Agent      3MiB        3MiB        20.6%   0.044393s
+Recycle-UCT    0MiB        0MiB        20.6%   0.021454s
+UCT Agent      3065MiB     3066MiB     20.7%   4.732858s
+Recycle-UCT    2678MiB     2680MiB     20.5%   4.123042s
+UCT Agent      2217MiB     2217MiB     20.6%   3.364051s
+Recycle-UCT    682MiB      682MiB      20.6%   0.692735s
+UCT Agent      181MiB      182MiB      20.6%   0.196672s
+Recycle-UCT    0MiB        0MiB        20.6%   0.066941s
+UCT Agent      12MiB       12MiB       20.6%   0.062488s
+Recycle-UCT    0MiB        0MiB        20.6%   0.041575s
+UCT Agent      0MiB        0MiB        20.6%   0.036482s
+Recycle-UCT    3059MiB     3060MiB     20.5%   4.476864s
+UCT Agent      2678MiB     2679MiB     20.5%   4.099895s
+Recycle-UCT    2190MiB     2190MiB     20.5%   2.75798s
+UCT Agent      598MiB      598MiB      20.5%   0.629578s
+Recycle-UCT    100MiB      100MiB      20.5%   0.160336s
+UCT Agent      51MiB       51MiB       20.5%   0.127729s
+Recycle-UCT    0MiB        0MiB        20.5%   0.050853s
+UCT Agent      3MiB        3MiB        20.5%   0.035961s
+UCT Agent      3062MiB     3064MiB     20.6%   4.578074s
+Recycle-UCT    2680MiB     2681MiB     20.5%   4.203432s
+UCT Agent      2194MiB     2194MiB     20.5%   3.069503s
+Recycle-UCT    684MiB      684MiB      20.5%   0.71885s
+UCT Agent      178MiB      178MiB      20.5%   0.196446s
+Recycle-UCT    0MiB        0MiB        20.5%   0.065932s
+UCT Agent      12MiB       12MiB       20.5%   0.061916s
+Recycle-UCT    0MiB        0MiB        20.5%   0.04466s
+UCT Agent      0MiB        0MiB        20.5%   0.038557s
+Recycle-UCT    3065MiB     3066MiB     20.5%   4.780255s
+UCT Agent      2680MiB     2681MiB     20.4%   4.400142s
+Recycle-UCT    2200MiB     2201MiB     20.4%   3.287458s
+UCT Agent      721MiB      721MiB      20.4%   0.774559s
+Recycle-UCT    104MiB      104MiB      20.4%   0.144524s
+UCT Agent      52MiB       52MiB       20.4%   0.105913s
+Recycle-UCT    1MiB        1MiB        20.4%   0.062243s
+UCT Agent      2MiB        2MiB        20.4%   0.050872s
+Recycle-UCT    0MiB        0MiB        20.4%   0.032696s
+UCT Agent      3066MiB     3068MiB     20.4%   4.868674s
+Recycle-UCT    2678MiB     2679MiB     20.3%   4.163407s
+UCT Agent      2203MiB     2203MiB     20.3%   2.70525s
+Recycle-UCT    525MiB      526MiB      20.3%   0.488903s
+UCT Agent      185MiB      186MiB      20.3%   0.225558s
+Recycle-UCT    2MiB        2MiB        20.3%   0.064248s
+UCT Agent      13MiB       13MiB       20.3%   0.059737s
+Recycle-UCT    0MiB        0MiB        20.3%   0.029171s
+Recycle-UCT    3059MiB     3060MiB     20.3%   4.876854s
+UCT Agent      2678MiB     2679MiB     20.7%   4.112661s
+Recycle-UCT    2179MiB     2179MiB     20.7%   2.188688s
+UCT Agent      659MiB      659MiB      20.7%   0.700972s
+Recycle-UCT    135MiB      135MiB      20.7%   0.193423s
+UCT Agent      53MiB       53MiB       20.7%   0.104719s
+Recycle-UCT    1MiB        1MiB        20.7%   0.054613s
+UCT Agent      3MiB        3MiB        20.7%   0.043962s
+Recycle-UCT    0MiB        0MiB        20.7%   0.020956s
+UCT Agent      3072MiB     3074MiB     20.5%   4.633051s
+Recycle-UCT    2678MiB     2679MiB     20.4%   3.993687s
+UCT Agent      2196MiB     2196MiB     20.6%   2.709675s
+Recycle-UCT    516MiB      516MiB      20.7%   0.587044s
+UCT Agent      178MiB      179MiB      20.7%   0.258435s
+Recycle-UCT    0MiB        0MiB        20.7%   0.071478s
+UCT Agent      12MiB       12MiB       20.7%   0.063139s
+Recycle-UCT    0MiB        0MiB        20.7%   0.041973s
+UCT Agent      0MiB        0MiB        20.7%   0.036277s
+Recycle-UCT    3059MiB     3060MiB     20.6%   4.551091s
+UCT Agent      2678MiB     2679MiB     20.6%   3.994177s
+Recycle-UCT    2185MiB     2185MiB     20.6%   3.061604s
+UCT Agent      667MiB      667MiB      20.6%   0.701429s
+Recycle-UCT    138MiB      138MiB      20.6%   0.200052s
+UCT Agent      52MiB       52MiB       20.6%   0.104597s
+Recycle-UCT    1MiB        1MiB        20.6%   0.054191s
+UCT Agent      3MiB        3MiB        20.6%   0.044553s
+Recycle-UCT    0MiB        0MiB        20.6%   0.036984s
+UCT Agent      3062MiB     3064MiB     20.5%   4.485894s
+Recycle-UCT    2678MiB     2679MiB     20.6%   4.146974s
+UCT Agent      2205MiB     2205MiB     20.6%   2.895916s
+Recycle-UCT    532MiB      532MiB      20.6%   0.490447s
+UCT Agent      186MiB      187MiB      20.5%   0.22879s
+Recycle-UCT    2MiB        2MiB        20.5%   0.061541s
+UCT Agent      13MiB       13MiB       20.5%   0.055314s
+Recycle-UCT    0MiB        0MiB        20.5%   0.03393s
+Recycle-UCT    3058MiB     3060MiB     20.5%   4.495393s
+UCT Agent      2680MiB     2681MiB     20.6%   4.075727s
+Recycle-UCT    2192MiB     2192MiB     20.5%   2.792332s
+UCT Agent      586MiB      586MiB      20.5%   0.607836s
+Recycle-UCT    103MiB      103MiB      20.5%   0.148661s
+UCT Agent      50MiB       50MiB       20.5%   0.123476s
+Recycle-UCT    0MiB        0MiB        20.5%   0.049399s
+UCT Agent      3MiB        3MiB        20.5%   0.028219s
+UCT Agent      3063MiB     3064MiB     20.5%   4.505976s
+Recycle-UCT    2680MiB     2681MiB     20.5%   4.274195s
+UCT Agent      2196MiB     2196MiB     20.5%   3.074564s
+Recycle-UCT    693MiB      693MiB      20.5%   0.699572s
+UCT Agent      182MiB      183MiB      20.5%   0.204405s
+Recycle-UCT    0MiB        0MiB        20.5%   0.065628s
+UCT Agent      12MiB       12MiB       20.5%   0.062304s
+Recycle-UCT    0MiB        0MiB        20.5%   0.041767s
+UCT Agent      0MiB        0MiB        20.5%   0.028748s
+Recycle-UCT    3070MiB     3071MiB     20.5%   4.550713s
+UCT Agent      2678MiB     2679MiB     20.6%   3.99667s
+Recycle-UCT    2187MiB     2187MiB     21.2%   2.779191s
+UCT Agent      600MiB      600MiB      21.2%   0.646216s
+Recycle-UCT    123MiB      124MiB      21.2%   0.202389s
+UCT Agent      47MiB       47MiB       21.2%   0.107997s
+Recycle-UCT    0MiB        0MiB        21.2%   0.046057s
+UCT Agent      3066MiB     3067MiB     20.8%   4.606681s
+Recycle-UCT    2678MiB     2679MiB     20.9%   4.010759s
+UCT Agent      2198MiB     2199MiB     20.8%   2.741788s
+Recycle-UCT    524MiB      524MiB      20.8%   0.531339s
+UCT Agent      178MiB      178MiB      20.8%   0.24479s
+Recycle-UCT    0MiB        0MiB        20.8%   0.068237s
+UCT Agent      12MiB       12MiB       20.8%   0.056139s
+Recycle-UCT    0MiB        0MiB        20.8%   0.03464s
+UCT Agent      0MiB        0MiB        20.8%   0.020843s
+Recycle-UCT    3059MiB     3061MiB     20.8%   4.744734s
+UCT Agent      2677MiB     2677MiB     20.8%   3.980973s
+Recycle-UCT    2187MiB     2187MiB     20.8%   2.674166s
+UCT Agent      717MiB      717MiB      20.8%   0.806129s
+Recycle-UCT    90MiB       90MiB       20.8%   0.15818s
+UCT Agent      53MiB       53MiB       20.8%   0.140989s
+Recycle-UCT    0MiB        0MiB        20.8%   0.054115s
+UCT Agent      3MiB        3MiB        20.8%   0.043758s
+Recycle-UCT    0MiB        0MiB        20.8%   0.020476s
+UCT Agent      3072MiB     3073MiB     20.9%   4.580349s
+Recycle-UCT    2678MiB     2679MiB     20.8%   4.089397s
+UCT Agent      2205MiB     2205MiB     20.5%   2.886245s
+Recycle-UCT    524MiB      524MiB      20.6%   0.494705s
+UCT Agent      186MiB      186MiB      20.6%   0.226735s
+Recycle-UCT    2MiB        2MiB        20.6%   0.067398s
+UCT Agent      13MiB       13MiB       20.6%   0.058797s
+Recycle-UCT    0MiB        0MiB        20.6%   0.029715s
+Recycle-UCT    3059MiB     3060MiB     20.8%   4.671396s
+UCT Agent      2678MiB     2679MiB     20.6%   4.132596s
+Recycle-UCT    2203MiB     2204MiB     20.6%   3.466347s
+UCT Agent      732MiB      732MiB      20.6%   0.753021s
+Recycle-UCT    99MiB       100MiB      20.6%   0.137561s
+UCT Agent      52MiB       52MiB       20.6%   0.103288s
+Recycle-UCT    1MiB        1MiB        20.6%   0.053077s
+UCT Agent      3MiB        3MiB        20.6%   0.043997s
+Recycle-UCT    0MiB        0MiB        20.6%   0.034523s
+UCT Agent      3065MiB     3066MiB     20.3%   4.517729s
+Recycle-UCT    2680MiB     2681MiB     20.1%   3.62258s
+UCT Agent      2197MiB     2197MiB     20.1%   2.350456s
+Recycle-UCT    517MiB      517MiB      20.1%   0.397682s
+UCT Agent      180MiB      180MiB      20.1%   0.195212s
+Recycle-UCT    0MiB        0MiB        20.1%   0.053247s
+UCT Agent      12MiB       12MiB       20.1%   0.047336s
+Recycle-UCT    0MiB        0MiB        20.1%   0.030138s
+UCT Agent      0MiB        0MiB        20.1%   0.015108s
+Recycle-UCT    3065MiB     3066MiB     20.1%   4.172902s
+UCT Agent      2680MiB     2681MiB     20.1%   4.274915s
+Recycle-UCT    2180MiB     2180MiB     20.1%   3.024063s
+UCT Agent      737MiB      737MiB      20.1%   0.765993s
+Recycle-UCT    85MiB       85MiB       20.1%   0.129332s
+UCT Agent      52MiB       52MiB       20.1%   0.104129s
+Recycle-UCT    0MiB        0MiB        20.1%   0.054333s
+UCT Agent      3MiB        3MiB        20.1%   0.04483s
+Recycle-UCT    0MiB        0MiB        20.1%   0.037035s
+UCT Agent      3065MiB     3066MiB     20.1%   4.56679s
+Recycle-UCT    2678MiB     2679MiB     20.1%   4.088403s
+UCT Agent      2199MiB     2199MiB     20.1%   2.646661s
+Recycle-UCT    528MiB      528MiB      20.1%   0.509049s
+UCT Agent      191MiB      192MiB      20.1%   0.238137s
+Recycle-UCT    0MiB        0MiB        20.1%   0.058896s
+UCT Agent      13MiB       13MiB       20.1%   0.050715s
+Recycle-UCT    3059MiB     3060MiB     20.1%   4.586488s
+UCT Agent      2678MiB     2679MiB     20.1%   3.973647s
+Recycle-UCT    2181MiB     2181MiB     20.1%   2.657303s
+UCT Agent      560MiB      560MiB      20.1%   0.560053s
+Recycle-UCT    66MiB       66MiB       20.1%   0.120652s
+UCT Agent      52MiB       52MiB       20.1%   0.121227s
+Recycle-UCT    1MiB        1MiB        20.1%   0.046816s
+UCT Agent      3MiB        3MiB        20.1%   0.037598s
+Recycle-UCT    0MiB        0MiB        20.1%   0.021193s
+UCT Agent      3064MiB     3065MiB     20.1%   4.674665s
+Recycle-UCT    2678MiB     2679MiB     20.1%   3.861147s
+UCT Agent      2202MiB     2202MiB     20.1%   2.582198s
+Recycle-UCT    513MiB      513MiB      20.1%   0.513841s
+UCT Agent      183MiB      183MiB      20.1%   0.248341s
+Recycle-UCT    0MiB        0MiB        20.1%   0.070585s
+UCT Agent      12MiB       12MiB       20.1%   0.062595s
+Recycle-UCT    0MiB        0MiB        20.1%   0.040889s
+UCT Agent      0MiB        0MiB        20.1%   0.035883s
+Recycle-UCT    3068MiB     3069MiB     20.1%   4.479398s
+UCT Agent      2678MiB     2679MiB     20.1%   4.076218s
+Recycle-UCT    2191MiB     2192MiB     20.2%   2.744549s
+UCT Agent      575MiB      575MiB      20.2%   0.595806s
+Recycle-UCT    109MiB      109MiB      20.2%   0.173876s
+UCT Agent      39MiB       39MiB       20.2%   0.102632s
+Recycle-UCT    0MiB        0MiB        20.2%   0.05058s
+UCT Agent      3MiB        3MiB        20.2%   0.035436s
+UCT Agent      3065MiB     3066MiB     20.1%   4.477501s
+Recycle-UCT    2680MiB     2681MiB     20.1%   4.153797s
+UCT Agent      2197MiB     2198MiB     20.1%   3.026788s
+Recycle-UCT    692MiB      693MiB      20.1%   0.718652s
+UCT Agent      181MiB      181MiB      20.1%   0.194391s
+Recycle-UCT    0MiB        0MiB        20.1%   0.067123s
+UCT Agent      12MiB       12MiB       20.1%   0.061103s
+Recycle-UCT    0MiB        0MiB        20.1%   0.040811s
+UCT Agent      0MiB        0MiB        20.1%   0.020521s
+Recycle-UCT    3058MiB     3060MiB     20.1%   4.481669s
+UCT Agent      2680MiB     2681MiB     20.1%   4.215834s
+Recycle-UCT    2192MiB     2192MiB     20.1%   2.737724s
+UCT Agent      576MiB      577MiB      20.1%   0.543114s
+Recycle-UCT    94MiB       94MiB       20.1%   0.127664s
+UCT Agent      39MiB       39MiB       20.1%   0.098083s
+Recycle-UCT    0MiB        0MiB        20.1%   0.048516s
+UCT Agent      3MiB        3MiB        20.1%   0.035417s
+UCT Agent      3063MiB     3064MiB     20.1%   4.470196s
+Recycle-UCT    2680MiB     2681MiB     20.1%   4.153543s
+UCT Agent      2190MiB     2191MiB     20.1%   2.801875s
+Recycle-UCT    609MiB      609MiB      20.1%   0.641658s
+UCT Agent      269MiB      269MiB      20.1%   0.351061s
+Recycle-UCT    0MiB        0MiB        20.1%   0.065444s
+UCT Agent      12MiB       12MiB       20.1%   0.062053s
+Recycle-UCT    0MiB        0MiB        20.1%   0.041185s
+UCT Agent      0MiB        0MiB        20.1%   0.035507s
+Recycle-UCT    3066MiB     3067MiB     20.1%   4.566501s
+UCT Agent      2678MiB     2679MiB     20.9%   4.106623s
+Recycle-UCT    2189MiB     2190MiB     21.0%   2.999741s
+UCT Agent      596MiB      596MiB      21.0%   0.643136s
+Recycle-UCT    101MiB      101MiB      21.0%   0.181712s
+UCT Agent      43MiB       43MiB       21.0%   0.10487s
+Recycle-UCT    0MiB        0MiB        21.0%   0.045643s
+UCT Agent      3067MiB     3068MiB     20.9%   4.742659s
+Recycle-UCT    2678MiB     2679MiB     20.9%   4.078671s
+UCT Agent      2205MiB     2205MiB     21.1%   2.813541s
+Recycle-UCT    521MiB      521MiB      21.1%   0.469367s
+UCT Agent      186MiB      186MiB      21.1%   0.234773s
+Recycle-UCT    2MiB        2MiB        21.1%   0.063595s
+UCT Agent      13MiB       13MiB       21.1%   0.059261s
+Recycle-UCT    0MiB        0MiB        21.1%   0.028946s
+Recycle-UCT    3076MiB     3078MiB     21.0%   4.756092s
+UCT Agent      2678MiB     2679MiB     21.0%   4.021152s
+Recycle-UCT    2180MiB     2180MiB     20.8%   2.677117s
+UCT Agent      560MiB      560MiB      20.8%   0.570025s
+Recycle-UCT    54MiB       54MiB       20.8%   0.110245s
+UCT Agent      53MiB       53MiB       20.8%   0.125247s
+Recycle-UCT    0MiB        0MiB        20.8%   0.046749s
+UCT Agent      3MiB        3MiB        20.8%   0.036799s
+Recycle-UCT    0MiB        0MiB        20.8%   0.022269s
+UCT Agent      3062MiB     3064MiB     20.7%   4.514475s
+Recycle-UCT    2678MiB     2679MiB     20.7%   3.949073s
+UCT Agent      2206MiB     2207MiB     20.7%   3.022109s
+Recycle-UCT    696MiB      696MiB      20.7%   0.719399s
+UCT Agent      183MiB      184MiB      20.7%   0.248875s
+Recycle-UCT    0MiB        0MiB        20.7%   0.07589s
+UCT Agent      12MiB       12MiB       20.7%   0.081528s
+Recycle-UCT    0MiB        0MiB        20.7%   0.048024s
+UCT Agent      0MiB        0MiB        20.7%   0.035192s
+Recycle-UCT    3059MiB     3060MiB     20.7%   4.460805s
+UCT Agent      2680MiB     2681MiB     20.7%   4.104729s
+Recycle-UCT    2186MiB     2186MiB     20.7%   2.463342s
+UCT Agent      562MiB      562MiB      20.7%   0.531096s
+Recycle-UCT    97MiB       97MiB       20.7%   0.133522s
+UCT Agent      52MiB       52MiB       20.7%   0.103926s
+Recycle-UCT    0MiB        0MiB        20.7%   0.053747s
+UCT Agent      3MiB        3MiB        20.7%   0.044294s
+Recycle-UCT    0MiB        0MiB        20.7%   0.036891s
+UCT Agent      3062MiB     3064MiB     20.7%   4.477395s
+Recycle-UCT    2680MiB     2681MiB     20.6%   4.299119s
+UCT Agent      2199MiB     2199MiB     20.6%   2.635714s
+Recycle-UCT    526MiB      526MiB      20.6%   0.563307s
+UCT Agent      193MiB      194MiB      20.6%   0.254884s
+Recycle-UCT    7MiB        7MiB        20.6%   0.066049s
+UCT Agent      13MiB       13MiB       20.6%   0.057265s
+Recycle-UCT    0MiB        0MiB        20.6%   0.026689s
+Recycle-UCT    3058MiB     3060MiB     20.6%   4.473906s
+UCT Agent      2679MiB     2680MiB     20.6%   4.286282s
+Recycle-UCT    2191MiB     2192MiB     20.6%   3.358738s
+UCT Agent      589MiB      589MiB      20.6%   0.498173s
+Recycle-UCT    109MiB      110MiB      20.6%   0.149581s
+UCT Agent      43MiB       43MiB       20.6%   0.086128s
+Recycle-UCT    0MiB        0MiB        20.6%   0.039467s
+UCT Agent      3067MiB     3068MiB     20.6%   4.477285s
+Recycle-UCT    2678MiB     2679MiB     20.6%   3.83096s
+UCT Agent      2195MiB     2196MiB     20.5%   3.002386s
+Recycle-UCT    694MiB      695MiB      20.6%   0.722669s
+UCT Agent      181MiB      182MiB      20.6%   0.199661s
+Recycle-UCT    0MiB        0MiB        20.6%   0.066307s
+UCT Agent      12MiB       12MiB       20.6%   0.065167s
+Recycle-UCT    0MiB        0MiB        20.6%   0.040809s
+UCT Agent      0MiB        0MiB        20.6%   0.020774s
+Recycle-UCT    3061MiB     3063MiB     20.6%   4.662223s
+UCT Agent      2678MiB     2679MiB     20.6%   3.987211s
+Recycle-UCT    2171MiB     2171MiB     20.6%   2.614173s
+UCT Agent      563MiB      563MiB      20.6%   0.619726s
+Recycle-UCT    46MiB       46MiB       20.6%   0.159983s
+UCT Agent      52MiB       52MiB       20.6%   0.1243s 
+Recycle-UCT    1MiB        1MiB        20.6%   0.046962s
+UCT Agent      3MiB        3MiB        20.6%   0.037651s
+Recycle-UCT    0MiB        0MiB        20.6%   0.02108s
+UCT Agent      3062MiB     3064MiB     20.6%   4.635468s
+Recycle-UCT    2678MiB     2679MiB     20.6%   4.137118s
+UCT Agent      2206MiB     2207MiB     20.5%   2.919477s
+Recycle-UCT    534MiB      534MiB      20.5%   0.501222s
+UCT Agent      185MiB      186MiB      20.5%   0.226958s
+Recycle-UCT    2MiB        2MiB        20.5%   0.061883s
+UCT Agent      13MiB       13MiB       20.5%   0.057946s
+Recycle-UCT    0MiB        0MiB        20.5%   0.033587s
+Recycle-UCT    3058MiB     3060MiB     20.8%   4.666487s
+UCT Agent      2678MiB     2679MiB     20.7%   3.953787s
+Recycle-UCT    2191MiB     2192MiB     20.7%   2.948593s
+UCT Agent      662MiB      662MiB      20.7%   0.701322s
+Recycle-UCT    155MiB      156MiB      20.7%   0.196633s
+UCT Agent      52MiB       52MiB       20.7%   0.101582s
+Recycle-UCT    1MiB        1MiB        20.7%   0.058338s
+UCT Agent      3MiB        3MiB        20.7%   0.04481s
+Recycle-UCT    0MiB        0MiB        20.7%   0.036077s
+UCT Agent      3062MiB     3064MiB     20.7%   4.49109s
+Recycle-UCT    2680MiB     2681MiB     20.8%   4.187809s
+UCT Agent      2200MiB     2200MiB     20.7%   2.666669s
+Recycle-UCT    537MiB      537MiB      20.7%   0.555993s
+UCT Agent      196MiB      196MiB      20.7%   0.265035s
+Recycle-UCT    8MiB        8MiB        20.7%   0.061435s
+UCT Agent      13MiB       13MiB       20.7%   0.056559s
+Recycle-UCT    0MiB        0MiB        20.7%   0.027165s
+Recycle-UCT    3068MiB     3069MiB     20.8%   4.541665s
+UCT Agent      2680MiB     2681MiB     20.7%   4.169581s
+Recycle-UCT    2184MiB     2185MiB     20.7%   2.694238s
+UCT Agent      563MiB      563MiB      20.7%   0.569518s
+Recycle-UCT    80MiB       80MiB       20.7%   0.137845s
+UCT Agent      53MiB       53MiB       20.7%   0.123924s
+Recycle-UCT    1MiB        1MiB        20.7%   0.058641s
+UCT Agent      3MiB        3MiB        20.7%   0.044638s
+Recycle-UCT    0MiB        0MiB        20.7%   0.021464s
+UCT Agent      3062MiB     3063MiB     20.5%   4.522182s
+Recycle-UCT    2680MiB     2681MiB     20.5%   4.541018s
+UCT Agent      2203MiB     2203MiB     20.5%   3.160013s
+Recycle-UCT    525MiB      526MiB      20.5%   0.478766s
+UCT Agent      186MiB      186MiB      20.5%   0.228926s
+Recycle-UCT    2MiB        2MiB        20.5%   0.072473s
+UCT Agent      13MiB       13MiB       20.5%   0.058619s
+Recycle-UCT    0MiB        0MiB        20.5%   0.034507s
+Recycle-UCT    3070MiB     3071MiB     20.4%   4.671887s
+UCT Agent      2678MiB     2679MiB     20.2%   4.027286s
+Recycle-UCT    2178MiB     2178MiB     20.4%   2.707412s
+UCT Agent      562MiB      562MiB      20.4%   0.602204s
+Recycle-UCT    61MiB       61MiB       20.4%   0.123046s
+UCT Agent      52MiB       52MiB       20.4%   0.122825s
+Recycle-UCT    0MiB        0MiB        20.4%   0.057286s
+UCT Agent      2MiB        2MiB        20.4%   0.044755s
+Recycle-UCT    0MiB        0MiB        20.4%   0.035341s
+UCT Agent      3066MiB     3068MiB     20.3%   4.632984s
+Recycle-UCT    2678MiB     2679MiB     20.4%   3.941929s
+UCT Agent      2200MiB     2200MiB     20.4%   2.62363s
+Recycle-UCT    518MiB      518MiB      20.4%   0.508011s
+UCT Agent      183MiB      183MiB      20.4%   0.307647s
+Recycle-UCT    1MiB        1MiB        20.4%   0.0694s 
+UCT Agent      12MiB       12MiB       20.4%   0.062394s
+Recycle-UCT    0MiB        0MiB        20.4%   0.041473s
+UCT Agent      0MiB        0MiB        20.4%   0.021667s
+Recycle-UCT    3068MiB     3069MiB     20.4%   4.604543s
+UCT Agent      2678MiB     2679MiB     20.4%   4.014151s
+Recycle-UCT    2190MiB     2191MiB     20.3%   2.502254s
+UCT Agent      565MiB      565MiB      20.3%   0.53437s
+Recycle-UCT    90MiB       90MiB       20.3%   0.127069s
+UCT Agent      53MiB       53MiB       20.3%   0.105185s
+Recycle-UCT    1MiB        1MiB        20.3%   0.056121s
+UCT Agent      1MiB        2MiB        20.3%   0.045699s
+Recycle-UCT    0MiB        0MiB        20.3%   0.020971s
+UCT Agent      3064MiB     3066MiB     21.1%   4.560303s
+Recycle-UCT    2678MiB     2679MiB     21.4%   4.313974s
+UCT Agent      2207MiB     2207MiB     21.1%   2.923206s
+Recycle-UCT    524MiB      524MiB      20.5%   0.516327s
+UCT Agent      185MiB      185MiB      20.5%   0.246765s
+Recycle-UCT    2MiB        2MiB        20.5%   0.064148s
+UCT Agent      13MiB       13MiB       20.6%   0.062116s
+Recycle-UCT    0MiB        0MiB        20.6%   0.035453s
+Recycle-UCT    3068MiB     3069MiB     20.5%   4.697887s
+UCT Agent      2680MiB     2681MiB     20.5%   4.042581s
+Recycle-UCT    2186MiB     2186MiB     20.5%   2.449574s
+UCT Agent      557MiB      557MiB      20.5%   0.51838s
+Recycle-UCT    95MiB       95MiB       20.5%   0.132443s
+UCT Agent      53MiB       53MiB       20.5%   0.103336s
+Recycle-UCT    0MiB        0MiB        20.5%   0.054019s
+UCT Agent      3MiB        3MiB        20.5%   0.044493s
+Recycle-UCT    0MiB        0MiB        20.5%   0.036393s
+UCT Agent      3062MiB     3063MiB     20.6%   4.557252s
+Recycle-UCT    2680MiB     2681MiB     20.7%   4.512475s
+UCT Agent      2190MiB     2190MiB     20.7%   3.052643s
+Recycle-UCT    693MiB      693MiB      20.7%   0.729119s
+UCT Agent      180MiB      180MiB      20.7%   0.199143s
+Recycle-UCT    0MiB        0MiB        20.7%   0.065311s
+UCT Agent      12MiB       12MiB       20.7%   0.063876s
+Recycle-UCT    0MiB        0MiB        20.7%   0.044194s
+UCT Agent      0MiB        0MiB        20.7%   0.038619s
+Recycle-UCT    3058MiB     3060MiB     20.8%   4.725112s
+UCT Agent      2678MiB     2680MiB     21.5%   4.355739s
+Recycle-UCT    2190MiB     2190MiB     21.5%   2.743021s
+UCT Agent      582MiB      582MiB      21.2%   0.603807s
+Recycle-UCT    100MiB      101MiB      21.2%   0.150996s
+UCT Agent      51MiB       51MiB       21.2%   0.121988s
+Recycle-UCT    0MiB        0MiB        21.2%   0.048037s
+UCT Agent      3MiB        3MiB        21.2%   0.02855s
+UCT Agent      3065MiB     3066MiB     20.6%   4.796701s
+Recycle-UCT    2678MiB     2679MiB     20.7%   4.12247s
+UCT Agent      2193MiB     2193MiB     20.8%   3.187721s
+Recycle-UCT    683MiB      683MiB      20.9%   0.789987s
+UCT Agent      181MiB      181MiB      20.9%   0.208866s
+Recycle-UCT    0MiB        0MiB        20.9%   0.070297s
+UCT Agent      12MiB       12MiB       20.9%   0.065638s
+Recycle-UCT    0MiB        0MiB        20.9%   0.043347s
+UCT Agent      0MiB        0MiB        20.9%   0.036709s
+Recycle-UCT    3067MiB     3069MiB     21.1%   4.889049s
+UCT Agent      2678MiB     2679MiB     21.4%   4.02037s
+Recycle-UCT    2185MiB     2185MiB     21.3%   2.544746s
+UCT Agent      571MiB      571MiB      21.4%   0.669947s
+Recycle-UCT    86MiB       86MiB       21.4%   0.147753s
+UCT Agent      53MiB       53MiB       21.1%   0.132385s
+Recycle-UCT    1MiB        1MiB        21.1%   0.049247s
+UCT Agent      3MiB        3MiB        21.1%   0.039461s
+Recycle-UCT    0MiB        0MiB        21.1%   0.023339s
+UCT Agent      3062MiB     3064MiB     21.0%   4.508159s
+Recycle-UCT    2678MiB     2679MiB     20.9%   4.096044s
+UCT Agent      2216MiB     2217MiB     20.9%   3.407301s
+Recycle-UCT    681MiB      681MiB      20.9%   0.703075s
+UCT Agent      179MiB      179MiB      20.9%   0.202404s
+Recycle-UCT    0MiB        0MiB        20.9%   0.065087s
+UCT Agent      12MiB       12MiB       20.9%   0.062395s
+Recycle-UCT    0MiB        0MiB        20.9%   0.041682s
+UCT Agent      0MiB        0MiB        20.9%   0.03603s
+Recycle-UCT    3068MiB     3069MiB     20.8%   4.54715s
+UCT Agent      2678MiB     2679MiB     20.9%   4.082674s
+Recycle-UCT    2187MiB     2187MiB     21.0%   2.982985s
+UCT Agent      659MiB      659MiB      20.8%   0.740151s
+Recycle-UCT    149MiB      149MiB      20.8%   0.210032s
+UCT Agent      52MiB       52MiB       20.8%   0.104006s
+Recycle-UCT    1MiB        1MiB        20.8%   0.058367s
+UCT Agent      3MiB        3MiB        20.8%   0.048994s
+Recycle-UCT    0MiB        0MiB        20.8%   0.038566s
+UCT Agent      3065MiB     3066MiB     21.1%   4.565034s
+Recycle-UCT    2680MiB     2681MiB     20.5%   4.028197s
+UCT Agent      2199MiB     2199MiB     20.3%   2.514012s
+Recycle-UCT    517MiB      517MiB      20.3%   0.513468s
+UCT Agent      182MiB      182MiB      20.4%   0.251065s
+Recycle-UCT    0MiB        0MiB        20.4%   0.068315s
+UCT Agent      12MiB       12MiB       20.4%   0.055583s
+Recycle-UCT    0MiB        0MiB        20.4%   0.034135s
+UCT Agent      0MiB        0MiB        20.4%   0.022016s
+Recycle-UCT    3059MiB     3060MiB     20.3%   4.46671s
+UCT Agent      2680MiB     2681MiB     20.3%   4.240074s
+Recycle-UCT    2181MiB     2181MiB     20.3%   3.062318s
+UCT Agent      738MiB      738MiB      20.3%   0.775297s
+Recycle-UCT    86MiB       86MiB       20.3%   0.129989s
+UCT Agent      52MiB       52MiB       20.3%   0.104216s
+Recycle-UCT    0MiB        0MiB        20.3%   0.053324s
+UCT Agent      3MiB        3MiB        20.3%   0.043731s
+Recycle-UCT    0MiB        0MiB        20.3%   0.036416s
+UCT Agent      3064MiB     3066MiB     20.3%   4.574894s
+Recycle-UCT    2678MiB     2679MiB     20.7%   4.226813s
+UCT Agent      2196MiB     2197MiB     20.7%   3.167764s
+Recycle-UCT    694MiB      694MiB      20.7%   0.718568s
+UCT Agent      181MiB      182MiB      20.7%   0.201009s
+Recycle-UCT    0MiB        0MiB        20.7%   0.065575s
+UCT Agent      12MiB       12MiB       20.7%   0.062625s
+Recycle-UCT    0MiB        0MiB        20.7%   0.041157s
+UCT Agent      0MiB        0MiB        20.7%   0.020761s
+Recycle-UCT    3070MiB     3071MiB     21.2%   4.773222s
+UCT Agent      2678MiB     2680MiB     21.1%   4.043745s
+Recycle-UCT    2188MiB     2189MiB     21.1%   2.374993s
+UCT Agent      583MiB      584MiB      21.0%   0.521215s
+Recycle-UCT    103MiB      104MiB      21.0%   0.111809s
+UCT Agent      51MiB       51MiB       21.0%   0.087498s
+Recycle-UCT    4MiB        4MiB        21.0%   0.036098s
+UCT Agent      3MiB        3MiB        21.0%   0.02161s
+UCT Agent      3064MiB     3065MiB     20.4%   4.02283s
+Recycle-UCT    2677MiB     2678MiB     20.8%   4.12231s
+UCT Agent      2205MiB     2205MiB     20.9%   2.85142s
+Recycle-UCT    628MiB      628MiB      20.8%   0.598219s
+UCT Agent      178MiB      178MiB      20.8%   0.25141s
+Recycle-UCT    0MiB        0MiB        20.8%   0.067684s
+UCT Agent      12MiB       12MiB       20.8%   0.067344s
+Recycle-UCT    0MiB        0MiB        20.8%   0.045918s
+UCT Agent      0MiB        0MiB        20.8%   0.040513s
+Recycle-UCT    3067MiB     3068MiB     21.1%   4.772249s
+UCT Agent      2678MiB     2679MiB     21.2%   3.909942s
+Recycle-UCT    2186MiB     2186MiB     21.1%   2.644631s
+UCT Agent      564MiB      564MiB      21.1%   0.588417s
+Recycle-UCT    87MiB       87MiB       21.1%   0.138833s
+UCT Agent      52MiB       52MiB       21.1%   0.125716s
+Recycle-UCT    0MiB        0MiB        21.1%   0.053577s
+UCT Agent      3MiB        3MiB        21.1%   0.043931s
+Recycle-UCT    0MiB        0MiB        21.1%   0.021404s
+UCT Agent      3063MiB     3064MiB     21.1%   4.546297s
+Recycle-UCT    2680MiB     2681MiB     21.1%   4.251786s
+UCT Agent      2214MiB     2214MiB     21.1%   3.302429s
+Recycle-UCT    679MiB      679MiB      21.1%   0.681824s
+UCT Agent      182MiB      182MiB      21.1%   0.197382s
+Recycle-UCT    0MiB        0MiB        21.1%   0.06898s
+UCT Agent      12MiB       12MiB       21.1%   0.05427s
+Recycle-UCT    3065MiB     3066MiB     21.0%   4.490033s
+UCT Agent      2680MiB     2681MiB     21.2%   4.253237s
+Recycle-UCT    2187MiB     2187MiB     21.0%   2.890307s
+UCT Agent      656MiB      656MiB      20.9%   0.720695s
+Recycle-UCT    152MiB      152MiB      20.9%   0.208636s
+UCT Agent      52MiB       52MiB       21.0%   0.110045s
+Recycle-UCT    1MiB        1MiB        21.0%   0.05426s
+UCT Agent      3MiB        3MiB        21.0%   0.045097s
+Recycle-UCT    0MiB        0MiB        21.0%   0.037395s
+UCT Agent      3062MiB     3064MiB     20.8%   4.489609s
+Recycle-UCT    2680MiB     2681MiB     20.8%   4.179054s
+UCT Agent      2199MiB     2199MiB     20.8%   2.825826s
+Recycle-UCT    618MiB      618MiB      20.8%   0.635275s
+UCT Agent      268MiB      268MiB      20.8%   0.350904s
+Recycle-UCT    0MiB        0MiB        20.8%   0.065322s
+UCT Agent      12MiB       12MiB       20.8%   0.062296s
+Recycle-UCT    0MiB        0MiB        20.8%   0.041112s
+UCT Agent      0MiB        0MiB        20.8%   0.020896s
+Recycle-UCT    3068MiB     3070MiB     20.8%   4.558347s
+UCT Agent      2678MiB     2679MiB     21.2%   3.959443s
+Recycle-UCT    2198MiB     2198MiB     20.4%   2.571722s
+UCT Agent      662MiB      662MiB      20.4%   0.714974s
+Recycle-UCT    192MiB      192MiB      20.4%   0.241718s
+UCT Agent      52MiB       52MiB       20.4%   0.104802s
+Recycle-UCT    1MiB        1MiB        20.4%   0.053068s
+UCT Agent      3MiB        3MiB        20.4%   0.043782s
+Recycle-UCT    0MiB        0MiB        20.4%   0.020755s
+UCT Agent      3072MiB     3074MiB     21.0%   4.782061s
+Recycle-UCT    2678MiB     2679MiB     21.0%   4.029428s
+UCT Agent      2205MiB     2205MiB     21.0%   2.848364s
+Recycle-UCT    617MiB      617MiB      21.0%   0.692774s
+UCT Agent      269MiB      269MiB      21.0%   0.354181s
+Recycle-UCT    0MiB        0MiB        21.0%   0.067329s
+UCT Agent      12MiB       12MiB       21.0%   0.066012s
+Recycle-UCT    0MiB        0MiB        21.0%   0.040943s
+UCT Agent      0MiB        0MiB        21.0%   0.034986s
+Recycle-UCT    3059MiB     3060MiB     21.0%   4.473894s
+UCT Agent      2677MiB     2678MiB     21.0%   4.075784s
+Recycle-UCT    2186MiB     2186MiB     21.0%   2.694876s
+UCT Agent      574MiB      574MiB      21.1%   0.682102s
+Recycle-UCT    109MiB      109MiB      21.0%   0.175682s
+UCT Agent      46MiB       46MiB       21.0%   0.108714s
+Recycle-UCT    0MiB        0MiB        21.0%   0.052023s
+UCT Agent      3MiB        3MiB        21.0%   0.031245s
+UCT Agent      3063MiB     3064MiB     21.0%   4.616649s
+Recycle-UCT    2678MiB     2679MiB     20.9%   3.838641s
+UCT Agent      2214MiB     2214MiB     20.9%   2.773163s
+Recycle-UCT    618MiB      618MiB      20.9%   0.654809s
+UCT Agent      268MiB      268MiB      20.9%   0.350685s
+Recycle-UCT    0MiB        0MiB        20.9%   0.065933s
+UCT Agent      12MiB       12MiB       20.9%   0.063743s
+Recycle-UCT    0MiB        0MiB        20.9%   0.041714s
+UCT Agent      0MiB        0MiB        20.9%   0.021276s
+Recycle-UCT    3067MiB     3068MiB     20.9%   4.471503s
+UCT Agent      2680MiB     2681MiB     20.5%   4.510782s
+Recycle-UCT    2188MiB     2189MiB     20.3%   2.73733s
+UCT Agent      581MiB      581MiB      20.3%   0.584437s
+Recycle-UCT    106MiB      106MiB      20.3%   0.137646s
+UCT Agent      51MiB       51MiB       20.3%   0.115797s
+Recycle-UCT    0MiB        0MiB        20.3%   0.051372s
+UCT Agent      3MiB        3MiB        20.3%   0.030392s
+UCT Agent      3063MiB     3064MiB     20.3%   4.478761s
+Recycle-UCT    2680MiB     2681MiB     20.3%   4.285479s
+UCT Agent      2201MiB     2201MiB     20.3%   2.614748s
+Recycle-UCT    652MiB      652MiB      20.3%   0.557439s
+UCT Agent      179MiB      179MiB      20.3%   0.235278s
+Recycle-UCT    0MiB        0MiB        20.3%   0.070428s
+UCT Agent      12MiB       12MiB       20.3%   0.065679s
+Recycle-UCT    0MiB        0MiB        20.3%   0.04046s
+UCT Agent      0MiB        0MiB        20.3%   0.020543s
+Recycle-UCT    3066MiB     3067MiB     20.3%   4.559143s
+UCT Agent      2678MiB     2679MiB     20.4%   4.087543s
+Recycle-UCT    2185MiB     2185MiB     20.3%   2.580482s
+UCT Agent      571MiB      571MiB      20.3%   0.566353s
+Recycle-UCT    113MiB      113MiB      20.3%   0.178713s
+UCT Agent      32MiB       32MiB       20.3%   0.085361s
+Recycle-UCT    0MiB        0MiB        20.3%   0.045158s
+UCT Agent      3067MiB     3068MiB     20.3%   4.628691s
+Recycle-UCT    2677MiB     2677MiB     20.2%   3.838429s
+UCT Agent      2213MiB     2214MiB     20.2%   2.578583s
+Recycle-UCT    616MiB      616MiB      20.2%   0.651393s
+UCT Agent      266MiB      266MiB      20.2%   0.348916s
+Recycle-UCT    0MiB        0MiB        20.2%   0.066929s
+UCT Agent      12MiB       12MiB       20.2%   0.065746s
+Recycle-UCT    0MiB        0MiB        20.2%   0.041596s
+UCT Agent      0MiB        0MiB        20.2%   0.035398s
+Recycle-UCT    3061MiB     3062MiB     20.2%   4.689621s
+UCT Agent      2677MiB     2678MiB     20.4%   3.958369s
+Recycle-UCT    2180MiB     2180MiB     20.3%   2.714974s
+UCT Agent      558MiB      558MiB      21.0%   0.588706s
+Recycle-UCT    55MiB       56MiB       21.0%   0.110641s
+UCT Agent      53MiB       53MiB       21.0%   0.122659s
+Recycle-UCT    1MiB        1MiB        21.0%   0.05368s
+UCT Agent      3MiB        3MiB        21.0%   0.044117s
+Recycle-UCT    0MiB        0MiB        21.0%   0.035832s
+UCT Agent      3062MiB     3064MiB     20.6%   4.57409s
+Recycle-UCT    2678MiB     2679MiB     20.5%   3.948758s
+UCT Agent      2206MiB     2206MiB     20.5%   2.851573s
+Recycle-UCT    547MiB      547MiB      20.5%   0.551777s
+UCT Agent      194MiB      194MiB      20.5%   0.258005s
+Recycle-UCT    4MiB        4MiB        20.5%   0.066955s
+UCT Agent      13MiB       13MiB       20.5%   0.060788s
+Recycle-UCT    0MiB        0MiB        20.5%   0.028916s
+Recycle-UCT    3058MiB     3059MiB     20.6%   4.711435s
+UCT Agent      2680MiB     2681MiB     20.7%   3.989162s
+Recycle-UCT    2184MiB     2185MiB     20.7%   2.029024s
+UCT Agent      562MiB      563MiB      20.7%   0.4263s 
+Recycle-UCT    91MiB       91MiB       20.7%   0.111246s
+UCT Agent      52MiB       52MiB       20.7%   0.08158s
+Recycle-UCT    1MiB        1MiB        20.7%   0.043047s
+UCT Agent      3MiB        3MiB        20.7%   0.033227s
+Recycle-UCT    0MiB        0MiB        20.7%   0.026009s
+UCT Agent      3062MiB     3064MiB     20.7%   4.383991s
+Recycle-UCT    2679MiB     2680MiB     20.6%   3.995493s
+UCT Agent      2197MiB     2198MiB     20.6%   2.556955s
+Recycle-UCT    514MiB      514MiB      20.6%   0.516533s
+UCT Agent      183MiB      183MiB      20.6%   0.25071s
+Recycle-UCT    0MiB        0MiB        20.6%   0.069769s
+UCT Agent      12MiB       12MiB       20.6%   0.056042s
+Recycle-UCT    0MiB        0MiB        20.6%   0.034371s
+UCT Agent      0MiB        0MiB        20.6%   0.020763s
+Recycle-UCT    3065MiB     3066MiB     20.6%   4.496275s
+UCT Agent      2680MiB     2681MiB     20.6%   4.120872s
+Recycle-UCT    2178MiB     2178MiB     20.6%   2.740928s
+UCT Agent      656MiB      656MiB      20.6%   0.68482s
+Recycle-UCT    141MiB      141MiB      20.6%   0.185166s
+UCT Agent      52MiB       52MiB       20.6%   0.104537s
+Recycle-UCT    0MiB        0MiB        20.6%   0.054167s
+UCT Agent      3MiB        3MiB        20.6%   0.044603s
+Recycle-UCT    0MiB        0MiB        20.6%   0.021147s
+UCT Agent      3064MiB     3066MiB     20.6%   4.578817s
+Recycle-UCT    2678MiB     2679MiB     20.6%   4.095155s
+UCT Agent      2205MiB     2206MiB     20.6%   2.651929s
+Recycle-UCT    628MiB      628MiB      20.6%   0.539169s
+UCT Agent      183MiB      184MiB      20.7%   0.245571s
+Recycle-UCT    0MiB        0MiB        20.7%   0.072311s
+UCT Agent      12MiB       12MiB       20.7%   0.073665s
+Recycle-UCT    0MiB        0MiB        20.7%   0.042214s
+UCT Agent      0MiB        0MiB        20.7%   0.036137s
+Recycle-UCT    3060MiB     3062MiB     20.5%   4.707398s
+UCT Agent      2678MiB     2680MiB     20.3%   4.118011s
+Recycle-UCT    2188MiB     2188MiB     20.2%   2.716455s
+UCT Agent      583MiB      583MiB      20.2%   0.574492s
+Recycle-UCT    99MiB       100MiB      20.2%   0.127385s
+UCT Agent      51MiB       51MiB       20.2%   0.114025s
+Recycle-UCT    0MiB        0MiB        20.2%   0.049042s
+UCT Agent      3MiB        3MiB        20.2%   0.029951s
+UCT Agent      3067MiB     3068MiB     21.0%   4.739432s
+Recycle-UCT    2678MiB     2679MiB     20.9%   4.089478s
+UCT Agent      2204MiB     2205MiB     20.8%   2.708407s
+Recycle-UCT    640MiB      640MiB      21.3%   0.467499s
+UCT Agent      183MiB      183MiB      21.5%   0.191317s
+Recycle-UCT    0MiB        0MiB        21.5%   0.055307s
+UCT Agent      12MiB       12MiB       21.5%   0.051039s
+Recycle-UCT    0MiB        0MiB        21.5%   0.030381s
+UCT Agent      0MiB        0MiB        21.5%   0.015362s
+Recycle-UCT    3064MiB     3065MiB     21.4%   3.545213s
+UCT Agent      2678MiB     2679MiB     21.1%   3.150543s
+Recycle-UCT    2185MiB     2185MiB     21.1%   2.32349s
+UCT Agent      655MiB      655MiB      21.1%   0.558274s
+Recycle-UCT    149MiB      149MiB      21.1%   0.167996s
+UCT Agent      52MiB       52MiB       21.1%   0.080761s
+Recycle-UCT    0MiB        0MiB        21.1%   0.041071s
+UCT Agent      2MiB        2MiB        21.1%   0.033538s
+Recycle-UCT    0MiB        0MiB        21.1%   0.025982s
+UCT Agent      3064MiB     3066MiB     21.0%   4.034129s
+Recycle-UCT    2679MiB     2679MiB     20.9%   4.372351s
+UCT Agent      2202MiB     2203MiB     21.7%   3.128576s
+Recycle-UCT    695MiB      695MiB      21.7%   0.708197s
+UCT Agent      182MiB      182MiB      21.7%   0.203398s
+Recycle-UCT    0MiB        0MiB        21.7%   0.066616s
+UCT Agent      12MiB       12MiB       21.7%   0.06182s
+Recycle-UCT    0MiB        0MiB        21.7%   0.040725s
+UCT Agent      0MiB        0MiB        21.7%   0.034896s
+Recycle-UCT    3068MiB     3069MiB     21.4%   4.504297s
+UCT Agent      2680MiB     2681MiB     21.3%   4.205316s
+Recycle-UCT    2173MiB     2173MiB     21.5%   2.805649s
+UCT Agent      556MiB      556MiB      21.5%   0.610109s
+Recycle-UCT    47MiB       47MiB       21.5%   0.105907s
+UCT Agent      53MiB       53MiB       21.5%   0.123393s
+Recycle-UCT    0MiB        0MiB        21.5%   0.053308s
+UCT Agent      1MiB        1MiB        21.5%   0.044132s
+Recycle-UCT    0MiB        0MiB        21.5%   0.020817s
+UCT Agent      3065MiB     3067MiB     21.5%   4.568486s
+Recycle-UCT    2680MiB     2681MiB     21.5%   4.383227s
+UCT Agent      2198MiB     2198MiB     21.5%   3.034346s
+Recycle-UCT    694MiB      694MiB      21.5%   0.720792s
+UCT Agent      177MiB      177MiB      21.5%   0.195349s
+Recycle-UCT    0MiB        0MiB        21.5%   0.068414s
+UCT Agent      12MiB       12MiB       21.5%   0.062555s
+Recycle-UCT    0MiB        0MiB        21.5%   0.042134s
+UCT Agent      0MiB        0MiB        21.5%   0.035585s
+Recycle-UCT    3059MiB     3061MiB     21.2%   4.616683s
+UCT Agent      2678MiB     2679MiB     21.2%   4.285991s
+Recycle-UCT    2189MiB     2190MiB     21.2%   2.716401s
+UCT Agent      731MiB      731MiB      21.2%   0.745666s
+Recycle-UCT    111MiB      111MiB      21.2%   0.16706s
+UCT Agent      53MiB       53MiB       21.2%   0.125768s
+Recycle-UCT    0MiB        0MiB        21.2%   0.073194s
+UCT Agent      3MiB        3MiB        21.2%   0.056956s
+Recycle-UCT    0MiB        0MiB        21.2%   0.039503s
+UCT Agent      3064MiB     3065MiB     21.3%   4.857687s
+Recycle-UCT    2678MiB     2679MiB     21.3%   4.230829s
+UCT Agent      2204MiB     2204MiB     21.3%   2.859192s
+Recycle-UCT    618MiB      619MiB      21.3%   0.714801s
+UCT Agent      268MiB      268MiB      21.3%   0.353382s
+Recycle-UCT    0MiB        0MiB        21.3%   0.067056s
+UCT Agent      12MiB       12MiB       21.3%   0.062201s
+Recycle-UCT    0MiB        0MiB        21.3%   0.041301s
+UCT Agent      0MiB        0MiB        21.3%   0.02055s
+Recycle-UCT    3065MiB     3066MiB     21.3%   4.466374s
+UCT Agent      2677MiB     2678MiB     21.3%   3.827291s
+Recycle-UCT    2200MiB     2201MiB     21.3%   2.644516s
+UCT Agent      656MiB      656MiB      21.3%   0.680067s
+Recycle-UCT    194MiB      194MiB      21.3%   0.244739s
+UCT Agent      52MiB       52MiB       21.3%   0.102544s
+Recycle-UCT    0MiB        0MiB        21.3%   0.05364s
+UCT Agent      3MiB        3MiB        21.3%   0.044708s
+Recycle-UCT    0MiB        0MiB        21.3%   0.021059s
+UCT Agent      3063MiB     3064MiB     21.4%   4.772857s
+Recycle-UCT    2680MiB     2681MiB     21.4%   4.140964s
+UCT Agent      2204MiB     2204MiB     21.4%   2.721367s
+Recycle-UCT    537MiB      537MiB      21.4%   0.525151s
+UCT Agent      193MiB      194MiB      21.4%   0.247125s
+Recycle-UCT    11MiB       11MiB       21.4%   0.06516s
+UCT Agent      13MiB       13MiB       21.4%   0.05853s
+Recycle-UCT    0MiB        0MiB        21.4%   0.03441s
+Recycle-UCT    3059MiB     3060MiB     21.4%   4.471915s
+UCT Agent      2680MiB     2681MiB     21.5%   4.439632s
+Recycle-UCT    2181MiB     2181MiB     21.6%   3.168578s
+UCT Agent      739MiB      739MiB      21.7%   0.827326s
+Recycle-UCT    88MiB       88MiB       21.6%   0.140599s
+UCT Agent      52MiB       52MiB       21.6%   0.103269s
+Recycle-UCT    0MiB        0MiB        21.6%   0.053448s
+UCT Agent      3MiB        3MiB        21.6%   0.044185s
+Recycle-UCT    0MiB        0MiB        21.6%   0.020997s
+UCT Agent      3063MiB     3064MiB     21.2%   4.727827s
+Recycle-UCT    2680MiB     2681MiB     21.7%   4.576663s
+UCT Agent      2205MiB     2205MiB     21.6%   2.929552s
+Recycle-UCT    620MiB      620MiB      21.6%   0.639653s
+UCT Agent      269MiB      269MiB      21.6%   0.353166s
+Recycle-UCT    0MiB        0MiB        21.6%   0.06557s
+UCT Agent      12MiB       12MiB       21.3%   0.066352s
+Recycle-UCT    0MiB        0MiB        21.3%   0.041279s
+UCT Agent      0MiB        0MiB        21.3%   0.021203s
+Recycle-UCT    3066MiB     3067MiB     21.3%   4.55553s
+UCT Agent      2678MiB     2679MiB     22.0%   4.250214s
+Recycle-UCT    2201MiB     2202MiB     22.0%   3.41983s
+UCT Agent      1197MiB     1198MiB     21.7%   1.764135s
+Recycle-UCT    212MiB      212MiB      21.7%   0.3523s 
+UCT Agent      53MiB       53MiB       21.7%   0.159248s
+Recycle-UCT    0MiB        0MiB        21.7%   0.057983s
+UCT Agent      3MiB        3MiB        21.7%   0.039172s
+Recycle-UCT    0MiB        0MiB        21.7%   0.02352s
+UCT Agent      3063MiB     3065MiB     21.8%   4.798087s
+Recycle-UCT    2677MiB     2678MiB     21.8%   4.329967s
+UCT Agent      2208MiB     2209MiB     21.7%   3.011807s
+Recycle-UCT    535MiB      535MiB      21.7%   0.587413s
+UCT Agent      196MiB      196MiB      21.7%   0.25607s
+Recycle-UCT    11MiB       11MiB       21.7%   0.063829s
+UCT Agent      13MiB       13MiB       21.7%   0.06434s
+Recycle-UCT    0MiB        0MiB        21.7%   0.038599s
+Recycle-UCT    3068MiB     3069MiB     21.7%   4.718748s
+UCT Agent      2678MiB     2679MiB     21.6%   4.180147s
+Recycle-UCT    2179MiB     2180MiB     21.6%   3.137693s
+UCT Agent      740MiB      740MiB      21.6%   0.76411s
+Recycle-UCT    84MiB       84MiB       21.6%   0.137296s
+UCT Agent      53MiB       53MiB       21.6%   0.10277s
+Recycle-UCT    1MiB        1MiB        21.6%   0.053905s
+UCT Agent      3MiB        3MiB        21.6%   0.043942s
+Recycle-UCT    0MiB        0MiB        21.6%   0.035794s
+{'Draws': 33, 'UCT Agent victories': 30, 'Recycle-UCT victories': 37}

@@ -26,8 +26,8 @@ class UCT(Agent):
                       max_seconds  =   -1,
                       max_episodes = 2000,
                       max_depth    =    0):
+        
         # starting the monitoring
-
         tracemalloc.start()
         start_time = time.time()
 

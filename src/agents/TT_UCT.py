@@ -31,12 +31,18 @@ In order to do it, we have to change expansion phase, backpropagation and maybe 
     Here im not sure what is the best way to do it... if a parent node has to compare who is the next step and
     one node appears in more than one path, maybe is infair compare its parameters with his sibblin.
 
+                        ** IMPORTANT **
+using transposition table bring to changes the structure of the game tree
+into a directed graph, BUT depending on the game it appears to have be cyclic
+SO it must use some strategy to avoid it, like not allow expanding nodes that
+would cause a cicle.
 '''
     
 class TT_UCT(UCT):  
     def __init__(self):
         self.TTable = {}
         self.count_transpositions = 0
+        self.leafs = 0
 
     def get_name(self):
         return "TT-UCT Agent"
@@ -46,7 +52,7 @@ class TT_UCT(UCT):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 2000,
+                      max_episodes = 500,
                       max_depth    =    0):
 
         # starting the monitoring
@@ -58,6 +64,7 @@ class TT_UCT(UCT):
 
         episodes = 0
         self.count_transpositions = 0
+        self.leafs = 0
         self.TTable = {}
         stop_time = math.inf if max_seconds <= 0.0 else time.time() + max_seconds
         
@@ -88,6 +95,7 @@ class TT_UCT(UCT):
                current_node):
         
         if current_node.legal_moves == []:
+            self.leafs+=1
             return current_node
 
         next_move    = current_node.legal_moves.pop()
@@ -115,9 +123,9 @@ class TT_UCT(UCT):
         lst_path = [target_node]
         while len(lst_path) > 0:
             current = lst_path.pop(0)
+            lst_old_parents.add(current)
             if current.parent == [None]:
                 continue
-            lst_old_parents.add(current)
             lst_path = lst_path + current.parent
         
         # 2: for every reachable node starting at new_parent (that not appears at lst_old_parents)
@@ -145,30 +153,6 @@ class TT_UCT(UCT):
             current.n_value += 1
             lst_parents.add(current)
             lst_nodes = current.parent + lst_nodes
-    
-    def UCB1(self, node):
-        best_child   = node
-        max_value    = -math.inf
-        lucky_number = 0
-        parent_log   = 2.0 * math.log(max(1, node.n_value))
-        
-        for ch in node.children:
-            exploitation = ch.q_value/ch.n_value
-            exploration  = math.sqrt(parent_log/ch.n_value)
-            if(node.player != self.player):
-                exploitation *=- 1
-            sum_ee = (exploration) + exploitation
-            
-            if sum_ee > max_value:
-                max_value  = sum_ee
-                best_child = ch
-            
-            elif sum_ee == max_value:
-                if random.randint(0, lucky_number + 1) == 0:
-                    best_child = ch
-                lucky_number += 1
-
-        return best_child
 
 class TTNode:
     def __init__(self, parent, move, context, legal_moves, player):
@@ -200,4 +184,7 @@ class TTNode:
         self.parent  = None
         self.move    = None
         self.context = None
+
+    def __str__(self):
+        return "p" + str(self.player) + "|"+str(self.context)
     

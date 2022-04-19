@@ -5,7 +5,10 @@ from copy import deepcopy
 
 from agents.agent import Agent
 from agents.UCT import UCT, Node
+
 import tracemalloc
+import psutil
+import time
 '''
  Recycle-UCT:  It reuses subtree from previous play and discard unused parts 
 
@@ -21,16 +24,18 @@ class Recycle_UCT(UCT):
         self.root = None
 
     def get_name(self):
-        return "Recycle UCT Agent"
+        return "Recycle-UCT"
 
     def select_action(self, 
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 1000,
+                      max_episodes = 2000,
                       max_depth    =    0):
-                      # starting the monitoring
+        # starting the monitoring
         tracemalloc.start()
+        start_time = time.time()
+
         
         r_nodes = 0
 
@@ -65,12 +70,15 @@ class Recycle_UCT(UCT):
         self.N+=1
 
 
-       # displaying the memory
+        # displaying the memory
         tmp = tracemalloc.get_traced_memory()
+        ag_str = self.get_name()
         str1 = str(int(tmp[0]/1000))+"MiB"
         str2 = str(int(tmp[1]/1000))+"MiB"
-        print(f'{str1:<12}{str2}')
-        # stopping the library
+        str3 = str(psutil.virtual_memory()[2]) + "%"
+        str4 = str(round((time.time() - start_time), 6)) + "s"
+
+        print(f'{ag_str:<15}{str1:<12}{str2:<12}{str3:<8}{str4:<8}')
         tracemalloc.stop()
 
 

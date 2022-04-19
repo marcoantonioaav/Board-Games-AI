@@ -7,6 +7,7 @@ from agents.random import RandomAgent
 from agents.UCT import UCT
 from agents.Recycle_UCT import Recycle_UCT
 from agents.TT_UCT import TT_UCT
+from agents.Improved_UCT import Improved_UCT
 
 from ui.game_screen import print_frame, print_result
 from games.tictactoe import TicTacToe
@@ -67,5 +68,5 @@ if __name__ == "__main__":
     #run_game_on_screen(TicTacToe(), RandomAgent(), ShotAgent())
     #run_game_on_screen(RandomAgent(), MinimaxAgent())
     #print(simulate_games(TicTacToe(),  MCTS.UCT(), MCTS.Recycle_UCT(), 100))
-    print(simulate_games(TicTacToe(), UCT(), TT_UCT(), 100, use_ui=False))
+    print(simulate_games(TicTacToe(),   Improved_UCT(), UCT(), 2, use_ui=False))
     #print(simulate_games(TicTacToe(), SequentialHalvingAgent(), MinimaxAgent(), 100))
