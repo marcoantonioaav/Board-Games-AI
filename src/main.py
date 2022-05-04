@@ -11,6 +11,7 @@ from agents.Improved_UCT import Improved_UCT
 
 from ui.game_screen import print_frame, print_result
 from games.tictactoe import TicTacToe
+from games.AGT import AGTree
 from ui.simulation_screen import print_simulation_frame
 
 def run_game(game, agent_1:Agent, agent_2:Agent):
@@ -63,10 +64,39 @@ def simulate_games(game, agent_1:Agent, agent_2:Agent, simulations, use_ui=True)
             print_simulation_frame(simulation, simulations, time_spent/(simulation+1))
     return results
 
+def something(ag, BEST_ACTION):
+    game = AGTree()
+    board = game.get_initial_board()
+    
+    simul = [1,2,3,4,5,6,7,8,9,10,15,30, 50, 100, 1000]
+    #simul = [15]
+    dic = {}
+    while simul != []:    
+        episodes = simul.pop(0)
+        c_count = 0
+        for i in range(100):
+            result = ag.select_action(game, board, max_episodes=episodes)
+        #print(result)
+            if result == BEST_ACTION:
+                c_count+=1
+        dic[episodes] = c_count
+        #print(c_count)
+    print(dic)
 
 if __name__ == "__main__":
     #run_game_on_screen(TicTacToe(), RandomAgent(), ShotAgent())
     #run_game_on_screen(RandomAgent(), MinimaxAgent())
     #print(simulate_games(TicTacToe(),  MCTS.UCT(), MCTS.Recycle_UCT(), 100))
-    print(simulate_games(TicTacToe(),   Improved_UCT(), UCT(), 2, use_ui=False))
+    #print(simulate_games(AGTree(),   TT_UCT(), UCT(), 1, use_ui=False))
     #print(simulate_games(TicTacToe(), SequentialHalvingAgent(), MinimaxAgent(), 100))
+
+    ag = TT_UCT()
+    ag.set_player(Agent.PLAYER_1)
+    something(ag,'l')
+
+
+    ag = UCT()
+    ag.set_player(Agent.PLAYER_1)
+    something(ag, 'l')
+
+    

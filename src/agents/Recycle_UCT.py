@@ -90,7 +90,7 @@ class Recycle_UCT(UCT):
     
     # should implement breath-first search
     def recycle(self, node, target):
-        if node.context == target:
+        if node.player == self.player and node.context == target:
             return node
 
         target_node = None

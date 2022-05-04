@@ -24,7 +24,7 @@ class UCT(Agent):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 2000,
+                      max_episodes =   10,
                       max_depth    =    0):
         
         # starting the monitoring
@@ -46,6 +46,7 @@ class UCT(Agent):
 
             episodes+=1
         
+
         # displaying the memory
         tmp = tracemalloc.get_traced_memory()
         ag_str = self.get_name()
@@ -54,10 +55,10 @@ class UCT(Agent):
         str3 = str(psutil.virtual_memory()[2]) + "%"
         str4 = str(round((time.time() - start_time), 6)) + "s"
 
-        print(f'{ag_str:<15}{str1:<12}{str2:<12}{str3:<8}{str4:<8}')
+        #print(f'{ag_str:<15}{str1:<12}{str2:<12}{str3:<8}{str4:<8}')
         tracemalloc.stop()
 
-        return self.robust_child(root)
+        return self.max_balanced_child(root)
     
 
     def search(self, game, node):
@@ -67,7 +68,7 @@ class UCT(Agent):
             return node
     
         else:
-            next_node = self.UCB1(node)
+            #next_node = self.UCB1(node)
             next_node = self.search(game, self.UCB1(node))
             
             return next_node
@@ -102,10 +103,10 @@ class UCT(Agent):
             random.shuffle(legal_moves)
             if len(legal_moves) == 0:
                 break
-            game.apply(legal_moves[0], current_state)
+            current_state = game.apply(legal_moves[0], current_state)
             
         
-        return self.reward_value(game, current_state, player)
+        return self.reward_value(game, current_state)
 
     def backpropagate(self, node, reward):
         current = node
@@ -120,7 +121,10 @@ class UCT(Agent):
         lucky_number = 0
         parent_log   = 2.0 * math.log(max(1, node.n_value))
         
+        #if node.context == 'H' and node.n_value > 5000:
+        #    print("UEUEUEUE")
         for ch in node.children:
+
             exploitation = ch.q_value/ch.n_value
             exploration  = math.sqrt(parent_log/ch.n_value)
             if(node.player != self.player):
@@ -139,13 +143,17 @@ class UCT(Agent):
         return best_child
 
     
-    def reward_value(self, game, state, player):
-        if game.is_victory(state, player) and player == self.player:
+    def reward_value(self, game, state):
+        if game.is_victory(state, self.player):
             return 1
-        elif game.is_victory(state, player) and player != self.player:
-            return -1
-        else:
-            return 0
+        return 0
+
+        #if game.is_victory(state, player) and player == self.player:
+        #    return 1
+        #elif game.is_victory(state, player*-1):
+        #    return 0
+        #else:
+        #    return 0
 
     def robust_child(self, root):
         max_n_value = -math.inf

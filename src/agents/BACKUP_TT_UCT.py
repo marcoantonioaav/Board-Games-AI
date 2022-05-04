@@ -1,4 +1,3 @@
-  
 import random
 import math
 import time
@@ -12,9 +11,13 @@ import tracemalloc
 import psutil
 '''
 TT-UCT: UCT with transposition table
+
 Uses transposition tables at Upper Confidence Trees:
+
 Node are considered the same if it shares the state and same player's turn.
+
 In order to do it, we have to change expansion phase, backpropagation and maybe UCB policy.
+
 *expansion phase:
     if (player, state) in TTable it should first append the new parent discovered and its new child.
     then it must make a *pre-backpropagation*, updating every new parent of the transposed node with
@@ -25,16 +28,21 @@ In order to do it, we have to change expansion phase, backpropagation and maybe 
     the expanded node can reach. (it must do a bottom-up update)
         - avoid double update nodes that appears in more than one path
 *UCB:
-    Check if creates to much bias and if UCB is sufficient to solve it with exploration vs exploitation
+    Here im not sure what is the best way to do it... if a parent node has to compare who is the next step and
+    one node appears in more than one path, maybe is infair compare its parameters with his sibblin.
 
-TODO: I think it should double update parents, if it dont, maybe it will interfier in policy
-TODO 2: Maybe transposition affects UCB and for the parent choose, maybe the parent should use some episodes to balance the bias.
+                        ** IMPORTANT **
+using transposition table bring to changes the structure of the game tree
+into a directed graph, BUT depending on the game it appears to have be cyclic
+SO it must use some strategy to avoid it, like not allow expanding nodes that
+would cause a cicle.
 '''
     
 class TT_UCT(UCT):  
     def __init__(self):
         self.TTable = {}
         self.count_transpositions = 0
+        self.leafs = 0
 
     def get_name(self):
         return "TT-UCT Agent"
@@ -44,7 +52,7 @@ class TT_UCT(UCT):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes = 2000,
+                      max_episodes = 5000,
                       max_depth    =    0):
 
         # starting the monitoring
@@ -56,6 +64,7 @@ class TT_UCT(UCT):
 
         episodes = 0
         self.count_transpositions = 0
+        self.leafs = 0
         self.TTable = {}
         stop_time = math.inf if max_seconds <= 0.0 else time.time() + max_seconds
         
@@ -76,16 +85,17 @@ class TT_UCT(UCT):
         str2 = str(int(tmp[1]/1000))+"MiB"
         str3 = str(psutil.virtual_memory()[2]) + "%"
         str4 = str(round(int(time.time() - start_time), 6)) + "s"
-        #print(f'{ag_str:<15}{str1:<12}{str2:<12}{str3:<8}{str4:<8}')
+        print(f'{ag_str:<15}{str1:<12}{str2:<12}{str3:<8}{str4:<8}')
         tracemalloc.stop()
 
-        return self.max_balanced_child(root)
+        return self.robust_child(root)
 
     def expand(self, 
                game, 
                current_node):
         
         if current_node.legal_moves == []:
+            #self.leafs+=1
             return current_node
 
         next_move    = current_node.legal_moves.pop()
@@ -106,6 +116,7 @@ class TT_UCT(UCT):
         self.TTable[(next_player, str_next_context)] = new_node
         return new_node
     
+    # update every parent node that appeared at expansion
     def pre_backpropagate(self, target_node, new_parent):
         
         # 1: search for every reachable node from target_node
@@ -113,9 +124,9 @@ class TT_UCT(UCT):
         lst_path = [target_node]
         while len(lst_path) > 0:
             current = lst_path.pop(0)
+            lst_old_parents.add(current)
             if current.parent == [None]:
                 continue
-            lst_old_parents.add(current)
             lst_path = lst_path + current.parent
         
         # 2: for every reachable node starting at new_parent (that not appears at lst_old_parents)
@@ -123,12 +134,9 @@ class TT_UCT(UCT):
         lst_path = [new_parent]
         while len(lst_path) > 0:
             current = lst_path.pop(0)
-            #TODO: fix it
-            if current == [None] or current == [] or current is None:
+            if current.parent == [None]:
                 continue
-            
-            #elif not current in lst_old_parents: # Not sure if it should invalid parents already updated in previous propagations
-            else:
+            elif not current in lst_old_parents:
                 current.n_value += target_node.n_value
                 current.q_value += target_node.q_value
             lst_path = lst_path + current.parent
@@ -139,17 +147,14 @@ class TT_UCT(UCT):
         lst_parents = set() # for double updating at backtrack
         while len(lst_nodes) > 0:
             current = lst_nodes.pop(0)
-            
-            #TODO: fix it
-            if current in lst_parents or current == [None] or current == [] or current is None: 
+            if current in lst_parents or current.parent == [None]:
                 continue
             
             current.q_value += reward
             current.n_value += 1
-            
-            #lst_parents.add(current) # Not sure if it should check parents already marked
-            
+            lst_parents.add(current)
             lst_nodes = current.parent + lst_nodes
+
 class TTNode:
     def __init__(self, parent, move, context, legal_moves, player):
         self.n_value  = 0
@@ -181,3 +186,6 @@ class TTNode:
         self.move    = None
         self.context = None
 
+    def __str__(self):
+        return "p" + str(self.player) + "|"+str(self.context)
+    
