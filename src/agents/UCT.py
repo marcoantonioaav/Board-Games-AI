@@ -16,7 +16,7 @@ import time
 '''
 
 class UCT(Agent):
-    
+    log_actions = {}
     def get_name(self):
         return "UCT Agent"
 
@@ -44,8 +44,27 @@ class UCT(Agent):
             reward       = self.playout(game, new_node)
             self.backpropagate(new_node, reward)
 
+
+            
+            arr_children = {}
+            for ch in root.children:
+                empirical_avg = round(1.0 * ch.q_value/ch.n_value, 6)
+                epsilon = empirical_avg
+                if episodes > 1 and ch.context in self.log_actions[episodes-1]:
+                    epsilon = round(abs(epsilon -  self.log_actions[episodes-1][ch.context]["emp_avg"]),6)
+                
+                arr_children[ch.context] =  {"emp_avg":empirical_avg, "err":epsilon}
+            self.log_actions[episodes] = arr_children
+            
             episodes+=1
         
+
+        for ep in self.log_actions:
+            print(("episode {:<4} [").format(str(ep)), end= " ")
+            str_actions = ""
+            for c in self.log_actions[ep]: 
+                str_actions += (" {:<2} ({:<10}, {:<10}) ").format(c, str(self.log_actions[ep][c]["emp_avg"]), str(self.log_actions[ep][c]["err"]))
+            print(str_actions + "]")
 
         # displaying the memory
         tmp = tracemalloc.get_traced_memory()
@@ -121,8 +140,6 @@ class UCT(Agent):
         lucky_number = 0
         parent_log   = 2.0 * math.log(max(1, node.n_value))
         
-        #if node.context == 'H' and node.n_value > 5000:
-        #    print("UEUEUEUE")
         for ch in node.children:
 
             exploitation = ch.q_value/ch.n_value

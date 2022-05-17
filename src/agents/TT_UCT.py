@@ -32,6 +32,8 @@ TODO 2: Maybe transposition affects UCB and for the parent choose, maybe the par
 '''
     
 class TT_UCT(UCT):  
+    log_actions = {}
+    
     def __init__(self):
         self.TTable = {}
         self.count_transpositions = 0
@@ -65,10 +67,27 @@ class TT_UCT(UCT):
             reward       = self.playout(game, new_node)
             self.backpropagate(new_node, reward)
             
+            arr_children = {}
+            for ch in root.children:
+                empirical_avg = round(1.0 * ch.q_value/ch.n_value, 6)
+                epsilon = empirical_avg
+                if episodes > 1 and ch.context in self.log_actions[episodes-1]:
+                    epsilon = round(abs(epsilon -  self.log_actions[episodes-1][ch.context]["emp_avg"]),6)
+                
+                arr_children[ch.context] =  {"emp_avg":empirical_avg, "err":epsilon}
+            self.log_actions[episodes] = arr_children
+            
             episodes+=1
 
         #print(self.count_transpositions)
+        for ep in self.log_actions:
+            print(("episode {:<4} [").format(str(ep)), end= " ")
+            str_actions = ""
+            for c in self.log_actions[ep]: 
+                str_actions += (" {:<2} ({:<10}, {:<10}) ").format(c, str(self.log_actions[ep][c]["emp_avg"]), str(self.log_actions[ep][c]["err"]))
+            print(str_actions + "]")
 
+            
         # displaying the memory
         ag_str = self.get_name()
         tmp = tracemalloc.get_traced_memory()

@@ -65,16 +65,16 @@ def simulate_games(game, agent_1:Agent, agent_2:Agent, simulations, use_ui=True)
     return results
 
 def something(ag, BEST_ACTION):
-    game = AGTree()
+    game = AGTree("T1P")
     board = game.get_initial_board()
     
-    simul = [1,2,3,4,5,6,7,8,9,10,15,30, 50, 100, 1000]
-    #simul = [15]
+    #simul = [1,2,3,4,5,6,7,8,9,10,15,30, 50, 100, 1000]
+    simul = [100]
     dic = {}
     while simul != []:    
         episodes = simul.pop(0)
         c_count = 0
-        for i in range(100):
+        for i in range(1):
             result = ag.select_action(game, board, max_episodes=episodes)
         #print(result)
             if result == BEST_ACTION:
@@ -90,13 +90,13 @@ if __name__ == "__main__":
     #print(simulate_games(AGTree(),   TT_UCT(), UCT(), 1, use_ui=False))
     #print(simulate_games(TicTacToe(), SequentialHalvingAgent(), MinimaxAgent(), 100))
 
-    ag = TT_UCT()
-    ag.set_player(Agent.PLAYER_1)
-    something(ag,'l')
+    # ag = TT_UCT()
+    # ag.set_player(Agent.PLAYER_1)
+    # something(ag,'l')
 
 
     ag = UCT()
     ag.set_player(Agent.PLAYER_1)
-    something(ag, 'l')
+    something(ag, 'c')
 
     
