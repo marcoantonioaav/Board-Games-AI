@@ -2,7 +2,7 @@ import timeit
 
 from agents.agent import Agent
 from agents.minimax import MinimaxAgent
-from agents.sequential_halving import SequentialHalvingAgent, ShotAgent
+from agents.sequential_halving import SequentialHalvingAgent, ShotAgent, ShotTreeAgent
 from agents.random import RandomAgent
 from agents.UCT import UCT
 from agents.Recycle_UCT import Recycle_UCT
@@ -84,19 +84,19 @@ def something(ag, BEST_ACTION):
     print(dic)
 
 if __name__ == "__main__":
-    #run_game_on_screen(TicTacToe(), RandomAgent(), ShotAgent())
+    #run_game_on_screen(TicTacToe(), RandomAgent(), ShotTreeAgent())
     #run_game_on_screen(RandomAgent(), MinimaxAgent())
     #print(simulate_games(TicTacToe(),  MCTS.UCT(), MCTS.Recycle_UCT(), 100))
     #print(simulate_games(AGTree(),   TT_UCT(), UCT(), 1, use_ui=False))
-    #print(simulate_games(TicTacToe(), SequentialHalvingAgent(), MinimaxAgent(), 100))
+    print(simulate_games(TicTacToe(), RandomAgent(), ShotTreeAgent(), 100))
 
     # ag = TT_UCT()
     # ag.set_player(Agent.PLAYER_1)
     # something(ag,'l')
 
 
-    ag = UCT()
-    ag.set_player(Agent.PLAYER_1)
-    something(ag, 'c')
+    #ag = UCT()
+    #ag.set_player(Agent.PLAYER_1)
+    #something(ag, 'c')
 
     
