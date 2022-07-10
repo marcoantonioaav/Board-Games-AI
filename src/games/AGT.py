@@ -108,7 +108,18 @@ class AGTree(Game):
             self.states['Q'] = { 'is_terminal':0, 'prob-win':1  , 'app_actions':('r','s')    }
             self.states['R'] = { 'is_terminal':1, 'prob-win':1  , 'app_actions':()           }
             self.states['S'] = { 'is_terminal':1, 'prob-win':0 , 'app_actions':()         }
-            
+
+        elif game_type == "SHOTTree":
+            self.states['A'] =  { 'is_terminal':0, 'prob-win':1, 'app_actions':('b', 'c', 'd', 'e')}
+            self.states['B'] =  { 'is_terminal':0, 'prob-win':0, 'app_actions':('b1', 'b2', 'b3', 'b4')}
+            self.states['C'] =  { 'is_terminal':1, 'prob-win':0, 'app_actions':()}
+            self.states['D'] =  { 'is_terminal':1, 'prob-win':0, 'app_actions':()}
+            self.states['E'] =  { 'is_terminal':1, 'prob-win':0, 'app_actions':()}
+            self.states['B1'] = { 'is_terminal':1, 'prob-win':1, 'app_actions':()}
+            self.states['B2'] = { 'is_terminal':1, 'prob-win':0, 'app_actions':()}
+            self.states['B3'] = { 'is_terminal':1, 'prob-win':1, 'app_actions':()}
+            self.states['B4'] = { 'is_terminal':1, 'prob-win':0, 'app_actions':()}
+              
         
 
     def get_initial_board(self):

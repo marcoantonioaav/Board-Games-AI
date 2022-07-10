@@ -3,7 +3,7 @@ from math import ceil, floor, log
 import random
 from agents.agent import Agent
 
-
+import math
 class SequentialHalvingAgent(Agent):
     def make_playout(self, context, starting_player):
         new_context = deepcopy(context)
@@ -12,8 +12,11 @@ class SequentialHalvingAgent(Agent):
             move = random.choice(self.game.moves(context, current_player))
             new_context = self.game.apply(move, new_context)
             current_player = self.get_opponent_of(current_player)
+            
         if self.game.is_victory(new_context, self.player):
             return 1
+        elif self.game.is_victory(new_context, self.get_opponent_of(self.player)):
+            return -1
         return 0
 
     def sequential_halving(self, context, budget):
@@ -33,7 +36,7 @@ class SequentialHalvingAgent(Agent):
         return moves_dict[0]['Move']
 
     def select_action(self, game, context, max_seconds=0, max_iterations=0, max_depth=0):
-        return self.sequential_halving(context, 5000)
+        return self.sequential_halving(context, 1000)
 
     def get_name(self):
         return "Sequential Halving Agent"

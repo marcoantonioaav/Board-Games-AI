@@ -24,7 +24,7 @@ class UCT(Agent):
                       game, 
                       context, 
                       max_seconds  =   -1,
-                      max_episodes =   10,
+                      max_episodes =   1000,
                       max_depth    =    0):
         
         # starting the monitoring
@@ -45,7 +45,7 @@ class UCT(Agent):
             self.backpropagate(new_node, reward)
 
 
-            
+            '''
             arr_children = {}
             for ch in root.children:
                 empirical_avg = round(1.0 * ch.q_value/ch.n_value, 6)
@@ -55,7 +55,7 @@ class UCT(Agent):
                 
                 arr_children[ch.context] =  {"emp_avg":empirical_avg, "err":epsilon}
             self.log_actions[episodes] = arr_children
-            
+            '''
             episodes+=1
         
 

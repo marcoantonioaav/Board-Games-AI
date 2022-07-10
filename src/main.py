@@ -1,4 +1,5 @@
 import timeit
+from agents.CanonicalShot import CanonicalShot
 
 from agents.agent import Agent
 from agents.minimax import MinimaxAgent
@@ -7,7 +8,7 @@ from agents.random import RandomAgent
 from agents.UCT import UCT
 from agents.Recycle_UCT import Recycle_UCT
 from agents.TT_UCT import TT_UCT
-from agents.Improved_UCT import Improved_UCT
+from agents.CanonicalShot import CanonicalShot
 
 from ui.game_screen import print_frame, print_result
 from games.tictactoe import TicTacToe
@@ -65,7 +66,7 @@ def simulate_games(game, agent_1:Agent, agent_2:Agent, simulations, use_ui=True)
     return results
 
 def something(ag, BEST_ACTION):
-    game = AGTree("T1P")
+    game = AGTree("SHOTTree")
     board = game.get_initial_board()
     
     #simul = [1,2,3,4,5,6,7,8,9,10,15,30, 50, 100, 1000]
@@ -87,15 +88,14 @@ if __name__ == "__main__":
     #run_game_on_screen(TicTacToe(), RandomAgent(), ShotTreeAgent())
     #run_game_on_screen(RandomAgent(), MinimaxAgent())
     #print(simulate_games(TicTacToe(),  MCTS.UCT(), MCTS.Recycle_UCT(), 100))
-    #print(simulate_games(AGTree(),   TT_UCT(), UCT(), 1, use_ui=False))
-    print(simulate_games(TicTacToe(), RandomAgent(), ShotTreeAgent(), 100))
+    print(simulate_games(TicTacToe(), CanonicalShot(), RandomAgent(), 100))
 
     # ag = TT_UCT()
     # ag.set_player(Agent.PLAYER_1)
     # something(ag,'l')
 
 
-    #ag = UCT()
+    #ag = CanonicalShot()
     #ag.set_player(Agent.PLAYER_1)
     #something(ag, 'c')
 

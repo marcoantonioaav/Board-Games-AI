@@ -1,6 +1,7 @@
 from audioop import reverse
 import math
 import copy
+from agents.UCT import Node
 from agents.agent import Agent
 from agents.sequential_halving import SequentialHalvingAgent
 
@@ -39,32 +40,37 @@ class CanonicalShot(SequentialHalvingAgent):
     def select_action(self, game, context, max_iterations=0, max_episodes=0, max_depth=0):
         root = SHOTNode(context, None, game.moves(context, self.player), self.player)
         self.game = game
-        budget = 1000
-        budget_used = self.expand(game, root, 1000)
+        budget = 5000
+        
+        budget_used = self.expand(game, root, budget)
+        self.sort(root.children, len(root.children), root.turn)
+
         if root.playouts >= budget:
-            return root.children[0]
+            return self.secure_child(root)
 
         virtual_ch_len = len(root.children)
         layer_budget = 0
         
         while(virtual_ch_len > 1):
             layer_budget += self.layer_budget(root.playouts, budget, len(root.children))
-            root.children = self.sort(root.children, virtual_ch_len, root.turn)
             
             for i in range(virtual_ch_len):    
                 ch = root.children[i]
-                child_budget = (layer_budget/virtual_ch_len) - ch.playouts
+                child_budget = max(1, math.floor(layer_budget/virtual_ch_len)) - ch.playouts
 
                 if virtual_ch_len <= 2:
                     child_budget = budget - root.playouts - child_budget
-
+                
+                prev_playouts = ch.playouts
+                prev_wins     = ch.wins
                 self.search(game, ch, child_budget)
-                root.playouts += ch.playouts
-                root.wins += ch.wins
+                root.playouts += ch.playouts - prev_playouts
+                root.wins += ch.wins - prev_wins
             virtual_ch_len = math.floor(virtual_ch_len/2)
-        
+            root.children = self.sort(root.children, virtual_ch_len, root.turn)
+            
         root.children = self.sort(root.children, 2, root.turn)
-        return root.children[0]
+        return self.secure_child(root)
 
     def search(self, game, node, budget):
         
@@ -74,12 +80,18 @@ class CanonicalShot(SequentialHalvingAgent):
             return
         
         if len(node.children) == 1:
+            prev_playouts = node.children[0].playouts
+            prev_wins     = node.children[0].wins
             self.search(game, node.children[0], budget-1)
+            node.playouts += node.children[0].playouts - prev_playouts
+            node.wins += node.children[0].wins - prev_wins
             return
 
 
         if len(node.unvisited_actions) > 0:
             self.expand(game, node, budget)
+            node.children = self.sort(node.children, len(node.children), node.turn)            
+            
             if node.playouts >= budget:
                 return
 
@@ -88,21 +100,21 @@ class CanonicalShot(SequentialHalvingAgent):
         layer_budget = 0
         while virtual_ch_len > 1:
             layer_budget += self.layer_budget(node.playouts, budget, len(node.children))
-            node.children = self.sort(node.children, virtual_ch_len, node.turn)            
             
             for i in range(virtual_ch_len):
                 ch = node.children[i]
-                child_budget = (layer_budget/virtual_ch_len) - ch.playouts
+                child_budget = max(1, math.floor(layer_budget/virtual_ch_len)) - ch.playouts
+                prev_playouts = ch.playouts
+                prev_wins     = ch.wins
                 self.search(game, ch, child_budget)
-                node.playouts += ch.playouts
-                node.wins     += ch.wins
+                node.playouts += (ch.playouts - prev_playouts)
+                node.wins     += (ch.wins - prev_wins)
             
             virtual_ch_len=math.floor(virtual_ch_len/2)
+            node.children = self.sort(node.children, virtual_ch_len, node.turn)            
             
     def expand(self, game, node, budget):
-        budget_used = 0
         for it_actions in range(len(node.unvisited_actions)):
-            budget_used+= 1
             next_action = node.unvisited_actions.pop(0)
             next_state  = game.apply(next_action, copy.deepcopy(node.state))
             next_turn = self.get_opponent_of(node.turn)
@@ -116,25 +128,47 @@ class CanonicalShot(SequentialHalvingAgent):
             node.wins     += next_node.wins
             
             if node.playouts >= budget:
-                return budget_used
-        return budget_used
-
+                return
+            
     def layer_budget(self, trials, budget, len_children):
         total_budget = trials + budget           
         total_layers = math.ceil(math.log(len_children, 2))
-        return math.floor(max(1, total_budget/total_layers))
+        return total_budget/total_layers
 
-
+    # o código comentado é para o agente fazer uma ordenação usando a política UCB1 *Jogou pior contra o UCT
     def sort(self, array, interval, player):
         ch_sort_cpy = array[:interval]
-            
+        
+        #parent_log   = 2.0 * math.log(max(1, sum([ch.playouts for ch in array])))
+        
         if self.player == player:
+            #ch_sort_cpy.sort(key=lambda ch: math.sqrt(parent_log/ch.playouts)+ch.wins/ch.playouts, reverse = True)
             ch_sort_cpy.sort(key=lambda ch: ch.wins/ch.playouts, reverse = True)
         else:
+            #ch_sort_cpy.sort(key=lambda ch: math.sqrt(parent_log/ch.playouts)-ch.wins/ch.playouts, reverse = True)
             ch_sort_cpy.sort(key=lambda ch: ch.wins/ch.playouts)
         
         array = ch_sort_cpy + array[interval:]
         return array
+
+    # tentei adaptar a UCB1 para ver se joga melhor
+    def secure_child(self, node):
+
+        # best_value = -100
+        # best_action = None
+        # parent_log   = 2.0 * math.log(max(1, sum([ch.playouts for ch in node.children])))
+        
+        # for ch in node.children:
+        #     ch_value = ch.wins/ch.playouts - math.sqrt(parent_log/ch.playouts)#(ch.wins/ch.playouts) * (ch.playouts/node.playouts)
+        #     if best_value < ch_value:
+        #         best_value =  ch_value
+        #         best_action = ch.action
+
+        # if best_action is None:
+        #     print("here we go again")
+        
+        # return best_action
+        return node.children[0].action
 
     def get_name(self):
         return "SHOT Agent"
