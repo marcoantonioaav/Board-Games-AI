@@ -1,5 +1,4 @@
 import timeit
-from agents.CanonicalShot import CanonicalShot
 
 from agents.agent import Agent
 from agents.minimax import MinimaxAgent
@@ -8,7 +7,7 @@ from agents.random import RandomAgent
 from agents.UCT import UCT
 from agents.Recycle_UCT import Recycle_UCT
 from agents.TT_UCT import TT_UCT
-from agents.CanonicalShot import CanonicalShot
+from agents.NestedSH import NestedSH
 
 from ui.game_screen import print_frame, print_result
 from games.tictactoe import TicTacToe
@@ -88,7 +87,7 @@ if __name__ == "__main__":
     #run_game_on_screen(TicTacToe(), RandomAgent(), ShotTreeAgent())
     #run_game_on_screen(RandomAgent(), MinimaxAgent())
     #print(simulate_games(TicTacToe(),  MCTS.UCT(), MCTS.Recycle_UCT(), 100))
-    print(simulate_games(TicTacToe(), CanonicalShot(), RandomAgent(), 100))
+    print(simulate_games(TicTacToe(), NestedSH(), RandomAgent(), 100))
 
     # ag = TT_UCT()
     # ag.set_player(Agent.PLAYER_1)

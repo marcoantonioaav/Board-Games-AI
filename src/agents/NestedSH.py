@@ -36,7 +36,7 @@ class SHOTNode():
 
 '''
 
-class CanonicalShot(SequentialHalvingAgent):
+class NestedSH(SequentialHalvingAgent):
     def select_action(self, game, context, max_iterations=0, max_episodes=0, max_depth=0):
         root = SHOTNode(context, None, game.moves(context, self.player), self.player)
         self.game = game
