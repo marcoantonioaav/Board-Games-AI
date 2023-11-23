@@ -12,10 +12,10 @@ class MinimaxAgent(Agent):
         else:
             return 0
     
-    def minimax(self, context, depth, maximizingMoveer):
+    def minimax(self, context, depth, maximizingMover):
         if depth == 0 or self.game.is_terminal_state(context):
             return self.evaluate(context), None
-        if maximizingMoveer:
+        if maximizingMover:
             max_value = -Inf
             max_move = None
             for legal_move in self.game.moves(context, self.player):

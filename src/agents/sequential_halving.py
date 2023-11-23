@@ -252,3 +252,6 @@ class ShotTreeAgent(Agent):
 
         def is_at_root(self):
             return self.father == None
+
+#monte carlo plano (sequential halving sem halve)
+#kiloton

@@ -11,9 +11,9 @@ def get_loading_bar_string(simulation, max_simulations):
     bar = ""
     bar_number = get_number_of_bars(simulation, max_simulations)
     for i in range(bar_number):
-        bar += "="
+        bar += "▪"
     for i in range(10 - bar_number):
-        bar += " "
+        bar += "▫"
     return f"[{bar}]"
 
 def print_loading_bar(simulation, max_simulations):

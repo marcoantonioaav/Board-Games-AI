@@ -2,6 +2,7 @@ import timeit
 
 from agents.agent import Agent
 from agents.minimax import MinimaxAgent
+from agents.neural_network import NeuralNetworkAgent
 from agents.sequential_halving import SequentialHalvingAgent, ShotAgent, ShotTreeAgent
 from agents.random import RandomAgent
 from agents.UCT import UCT
@@ -85,14 +86,19 @@ def something(ag, BEST_ACTION):
 
 if __name__ == "__main__":
     #run_game_on_screen(TicTacToe(), RandomAgent(), ShotTreeAgent())
-    #run_game_on_screen(RandomAgent(), MinimaxAgent())
+    nn = NeuralNetworkAgent()
+    nn.set_game(TicTacToe())
+    nn.set_player(Agent.PLAYER_1)
+    nn.train()
+    run_game_on_screen(TicTacToe(), nn, RandomAgent())
+    print(simulate_games(TicTacToe(), nn, RandomAgent(), 100))
     #print(simulate_games(TicTacToe(),  MCTS.UCT(), MCTS.Recycle_UCT(), 100))
-    print(simulate_games(TicTacToe(), NestedSH(), RandomAgent(), 100))
+    #print(simulate_games(TicTacToe(), NestedSH(), RandomAgent(), 100))#79
+    #print(simulate_games(TicTacToe(), ShotAgent(), RandomAgent(), 100))#81
 
     # ag = TT_UCT()
     # ag.set_player(Agent.PLAYER_1)
     # something(ag,'l')
-
 
     #ag = CanonicalShot()
     #ag.set_player(Agent.PLAYER_1)
